@@ -1,0 +1,13 @@
+# Misc. terraform cache
+.terraform/
+
+# Sensitive files
+## tokens and passwords and such
+*.tfvars
+
+## terraform state info
+*.tfstate
+*.tfstate.backup
+
+## .tfstate backups stored as a borg repository
+.tfstate-backup/
