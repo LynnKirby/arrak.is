@@ -1,2 +1,15 @@
 [build]
 publish = "static"
+
+# Redirect from Netlify to my domain
+[[redirects]]
+from = "http://arrakis.netlify.com/*"
+to = "https://arrak.is/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://arrakis.netlify.com/*"
+to = "https://arrak.is/:splat"
+status = 301
+force = true
