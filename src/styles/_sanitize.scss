@@ -1,0 +1,255 @@
+/*
+ * SPDX-License-Identifier: CC0-1.0
+ *
+ * Cut down version of sanitize.css v10 to only include opinionated settings
+ * and to get rid of ones I don't like.
+ *
+ * https://github.com/csstools/sanitize.css
+ */
+
+ /* Document
+ * ========================================================================== */
+
+/**
+ * Add border box sizing in all browsers (opinionated).
+ */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+ * 1. Add text decoration inheritance in all browsers (opinionated).
+ * 2. Add vertical alignment inheritance in all browsers (opinionated).
+ */
+
+::before,
+::after {
+  text-decoration: inherit; /* 1 */
+  vertical-align: inherit; /* 2 */
+}
+
+/**
+ * 1. Use the default cursor in all browsers (opinionated).
+ * 2. Change the line height in all browsers (opinionated).
+ * 3. Use a 4-space tab width in all browsers (opinionated).
+ * 4. Remove the grey highlight on links in iOS (opinionated).
+ * 5. Breaks words to prevent overflow in all browsers (opinionated).
+ */
+
+html {
+  cursor: default; /* 1 */
+  line-height: 1.5; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  tab-size: 4; /* 3 */
+  -webkit-tap-highlight-color: transparent /* 4 */;
+  word-break: break-word; /* 5 */
+}
+
+/* Sections
+ * ========================================================================== */
+
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+
+body {
+  margin: 0;
+}
+
+/* Embedded content
+ * ========================================================================== */
+
+/*
+ * Change the alignment on media elements in all browsers (opinionated).
+ */
+
+audio,
+canvas,
+embed,
+iframe,
+img,
+object,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/**
+ * Remove the border on iframes in all browsers (opinionated).
+ */
+
+iframe {
+  border-style: none;
+}
+
+/**
+ * Change the fill color to match the text color in all browsers (opinionated).
+ */
+
+svg:not([fill]) {
+  fill: currentColor;
+}
+
+/* Tabular data
+ * ========================================================================== */
+
+/**
+ * Collapse border spacing in all browsers (opinionated).
+ */
+
+table {
+  border-collapse: collapse;
+}
+
+/* Forms
+ * ========================================================================== */
+
+/**
+ * Change the resize direction in all browsers (opinionated).
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* User interaction
+ * ========================================================================== */
+
+/*
+ * Remove the tapping delay on clickable elements in all browsers (opinionated).
+ */
+
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+  touch-action: manipulation;
+}
+
+/* Accessibility
+ * ========================================================================== */
+
+/**
+ * Change the cursor on busy elements in all browsers (opinionated).
+ */
+
+[aria-busy="true"] {
+  cursor: progress;
+}
+
+/*
+ * Change the cursor on control elements in all browsers (opinionated).
+ */
+
+[aria-controls] {
+  cursor: pointer;
+}
+
+/*
+ * Change the cursor on disabled, not-editable, or otherwise
+ * inoperable elements in all browsers (opinionated).
+ */
+
+[aria-disabled="true"],
+[disabled] {
+  cursor: not-allowed;
+}
+
+/*
+ * Change the display on visually hidden accessible elements
+ * in all browsers (opinionated).
+ */
+
+[aria-hidden="false"][hidden] {
+  display: initial;
+}
+
+[aria-hidden="false"][hidden]:not(:focus) {
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+/* From forms.css
+ * ========================================================================== */
+
+/**
+ * 1. Change the inconsistent appearance in all browsers (opinionated).
+ * 2. Add typography inheritance in all browsers (opinionated).
+ */
+
+button,
+input,
+select,
+textarea {
+  background-color: transparent; /* 1 */
+  border: 1px solid WindowFrame; /* 1 */
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+  letter-spacing: inherit; /* 2 */
+  padding: 0.25em 0.375em; /* 1 */
+}
+
+/**
+* Change the inconsistent appearance in all browsers (opinionated).
+*/
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E") no-repeat right center / 1em;
+  border-radius: 0;
+  padding-right: 1em;
+}
+
+/**
+* Change the inconsistent appearance in IE (opinionated).
+*/
+
+::-ms-expand {
+  display: none;
+}
+
+/**
+* Correct the inconsistent appearance in IE (opinionated).
+*/
+
+:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+ /**
+ * Restrict sizing to the page width in all browsers (opinionated).
+ */
+
+iframe,
+img,
+input,
+select,
+textarea {
+  height: auto;
+  max-width: 100%;
+}
+
+/* From page.css
+ * ========================================================================== */
+
+/**
+ * Restrict sizing to the page width in all browsers (opinionated).
+ */
+
+ iframe,
+ img,
+ input,
+ select,
+ textarea {
+   height: auto;
+   max-width: 100%;
+ }

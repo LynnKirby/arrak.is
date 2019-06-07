@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} | arrak.is</title>
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arrak.is{{ page.url }}">
+    <link rel="canonical" href="https://arrak.is{{ page.url }}">
+    <!-- FIXME -->
+    <meta property="og:image" content="https://arrak.is/og-image.jpg">
+    {% if description -%}
+    <meta property="og:description" content="{{ description }}">
+    <meta name="description" content="{{ description }}">
+    {%- endif %}
+    <meta property="og:site_name" content="arrak.is">
+    <meta property="twitter:site" content="@ALynnkToThePast">
+  </head>
+  <body>
+    {{ content | safe }}
+  </body>
+</html>
