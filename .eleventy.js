@@ -1,5 +1,7 @@
 const execa = require("execa");
 const { DateTime } = require("luxon");
+const jsbeautify = require("js-beautify");
+const htmlmin = require("html-minifier");
 
 module.exports = config => {
   config.addPassthroughCopy("src/.well-known");
@@ -16,6 +18,22 @@ module.exports = config => {
       const { stdout } = execa.sync("pandoc", ["--from=markdown", "--to=html5"], { input });
       return stdout;
     },
+  });
+
+  config.addTransform("html-beautify", function(content, outputPath) {
+    if( outputPath.endsWith(".html") ) {
+      const cleaned = htmlmin.minify(content, {
+        removeComments: true
+      });
+
+      return jsbeautify.html_beautify(cleaned, {
+        indent_size: 2,
+        indent_char: " ",
+        max_preserve_newlines: 0,
+      });
+    }
+
+    return content;
   });
 
   return {

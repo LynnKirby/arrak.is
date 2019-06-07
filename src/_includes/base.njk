@@ -1,25 +1,11 @@
-<!doctype html>
-<html lang="en" prefix="og: http://ogp.me/ns#">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} | arrak.is</title>
-    <meta property="og:title" content="{{ title }}">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://arrak.is{{ page.url }}">
-    <link rel="canonical" href="https://arrak.is{{ page.url }}">
-    {% if ogimage %}
-    <meta property="og:image" content="https://arrak.is{{ ogimage }}">
-    {% endif %}
-    {% if description %}
-    <meta property="og:description" content="{{ description }}">
-    <meta name="description" content="{{ description }}">
-    {% endif %}
-    <meta property="og:site_name" content="arrak.is">
-    <meta property="twitter:site" content="@ALynnkToThePast">
-    <link rel="stylesheet" href="/styles/base.css">
-  </head>
-  <body>
-    {{ content | safe }}
-  </body>
-</html>
+---
+opengraph:
+  # Default to website, the most general og:type
+  type: website
+  # Default to using the root image
+  image: /og-image.png
+---
+{% extends "_base.njk" %}
+{% block content %}
+{{ content | safe }}
+{% endblock %}

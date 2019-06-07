@@ -1,0 +1,29 @@
+// SPDX-License-Identifier: CC0-1.0
+// Written 2019 Lynn Kirby
+
+// Generate color styles for the global navbar.
+@mixin global-nav-theme($logo-color, $logo-color-active, $text-color, $text-color-active, $bg-color) {
+  .global-nav {
+    background-color: $bg-color;
+  }
+
+  .global-nav,
+  .global-nav a {
+    color: $text-color;
+  }
+
+  .global-nav-enabled {
+    border-color: $text-color !important;
+  }
+
+  .global-nav-logo:hover,
+  .global-nav-logo:focus {
+    color: $logo-color-active;
+  }
+
+  .global-nav-links a:hover,
+  .global-nav-links a:focus {
+    color: $text-color-active;
+    border-color: $text-color-active !important;
+  }
+}

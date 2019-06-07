@@ -1,0 +1,12 @@
+@import "global-nav/theme";
+
+$text: #cbcbcb;
+$active: white;
+
+@include global-nav-theme(
+  $text,      // logo-color
+  hotpink,    // logo-color-active
+  $text,      // text-color
+  $active,    // text-color-active
+  transparent // bg-color
+);

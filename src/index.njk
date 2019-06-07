@@ -1,0 +1,108 @@
+---
+title: Lynn Kirby
+description: Lynn's corner of the information superhighway.
+preload: /assets/under-construction.gif
+globalnav:
+  category: home
+  theme: dark
+---
+{% extends "_base.njk" %}
+
+{% block additional_head_content %}
+{# JSON-LD structured data #}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Lynn Kirby",
+    "gender": "🏴",
+    "url": "https://arrak.is",
+    "sameAs": [
+      "https://twitter.com/ALynnkToThePast"
+    ]
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Brand",
+    "url": "https://arrak.is",
+    "logo": "https://arrak.is/og-image.jpg"
+  }
+</script>
+
+{# Favicons, etc. #}
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="apple-mobile-web-app-title" content="arrak.is">
+<meta name="application-name" content="arrak.is">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<style>
+  body {
+    background: black;
+    color: hotpink;
+    font-size: 20px;
+  }
+
+  .content {
+    margin: 0 auto;
+    padding: 1em;
+    max-width: 40em;
+  }
+
+  .content h1 {
+    text-align: center;
+  }
+
+  .content #page-list tr td:first-child {
+    color: grey;
+    padding-right: 1em;
+  }
+
+  .content a {
+    text-decoration: none;
+    color: hotpink;
+    border-bottom: 1px dotted currentColor;
+  }
+
+  .content a:hover, .content a:focus {
+    color: red;
+  }
+
+  .content header {
+    text-align: center;
+  }
+
+  .content img {
+    max-width: 100%;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="sans">
+<header>
+  <img
+    src="assets/under-construction.gif"
+    title="under construction image"
+    alt="Bart Simpson stands beside a sign labeled 'this site under construction' and is saying 'Don't worry, it's gonna be cool... Homer's on the job, man! With Homer Simpson using a jackhammer dangerously in the background"
+  >
+  <h1><a href="about">Lynn</a>'s corner of the<br><em>information superhighway</em></h1>
+</header>
+<table id="page-list">
+  <tr>
+    <td>2019-03-30</td>
+    <td><a href="x/john-brown/">Ye soldiers of freedom, then strike, while strike ye may</a></td>
+  </tr>
+  <tr>
+    <td>1990-04-18</td>
+    <td><a href="x/welcome-to-the-machine/">Welcome to the machine</a></td>
+  </tr>
+</table>
+</div>
+{% endblock %}

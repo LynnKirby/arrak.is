@@ -44,27 +44,3 @@ $font-family-mono:
   /* fallback */ monospace,
   $font-family-emoji
   !default;
-
-// Apply the above fonts to the appropriate elements
-:root {
-  font-family: $font-family-sans;
-}
-
-code,
-kbd,
-samp,
-pre {
-  font-family: $font-family-mono;
-}
-
-.sans {
-  font-family: $font-family-sans;
-}
-
-.serif {
-  font-family: $font-family-serif;
-}
-
-.mono {
-  font-family: $font-family-mono;
-}

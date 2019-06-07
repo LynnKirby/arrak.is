@@ -1,5 +1,5 @@
 ---
-layout: shell
+layout: base
 title: Ye soldiers of freedom, then strike, while strike ye may
 description: I am quite certain that the crimes of this guilty land will never be purged away but with blood.
 date: 2019-03-30
@@ -7,24 +7,23 @@ redirect:
 - /x/1/index.html
 - /x/1/
 - /x/1
-ogimage: /x/john-brown/og-image.png
+og:
+  image: /x/john-brown/og-image.png
+globalnav:
+  theme: dark
 ---
 <style>
-  html, body {
-    width: 100%;
-    height: 100%
-  }
-
   body {
-    margin: 0;
-    padding: 0;
-    align-items: center;
-    display: flex;
-    justify-content: center;
     background: black;
   }
 
-  img {
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content img {
     max-width: 100%;
     max-height: 100%;
   }

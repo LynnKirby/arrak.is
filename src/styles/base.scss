@@ -1,12 +1,33 @@
 // SPDX-License-Identifier: CC0-1.0
 // Written 2019 Lynn Kirby
 
-@import "normalize";
-@import "sanitize";
-@import "typography";
+// Import normalizations
+@import "base/_normalize";
+@import "base/_sanitize";
+
+// Import only the generic/non-colored global navbar styles.
+@import "global-nav/global-nav";
 
 // Remove default margin and padding from figures
 figure {
   margin: 0;
   padding: 0;
 }
+
+// Shell stuff
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
