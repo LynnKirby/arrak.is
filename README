@@ -5,3 +5,5 @@
 ██║  ██║██║  ██║██║  ██║██║  ██║██║  ██╗██╗██║███████║
 ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝╚══════╝
                            Welcome to the source code.
+
+Rather than using a real static site generator I hacked one together using Gulp tasks.
