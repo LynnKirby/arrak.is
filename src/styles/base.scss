@@ -8,6 +8,14 @@
 // Import only the generic/non-colored global navbar styles.
 @import "global-nav/global-nav";
 
+.preload * {
+  transition: none !important;
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
 // Remove default margin and padding from figures
 figure {
   margin: 0;
