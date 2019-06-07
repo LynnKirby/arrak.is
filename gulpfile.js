@@ -30,7 +30,7 @@ const task = ({ name, src, pipeline }) => {
   gulp.task(name, cb => {
     // Pumpify the entire task pipeline
     pump([
-      gulp.src(src, { base: "./src" }),
+      gulp.src(src, { base: "./src", dot: true }),
       ...pipeline,
       gulp.dest("./dist"),
       browserSync.stream(),
@@ -58,7 +58,7 @@ gulp.task("static", cb => {
   ];
 
   pump([
-    gulp.src(staticGlobs),
+    gulp.src(staticGlobs, { base: "./src", dot: true }),
     gulp.dest("./dist"),
   ], cb);
 });
