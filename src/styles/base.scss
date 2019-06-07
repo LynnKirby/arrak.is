@@ -4,3 +4,9 @@
 @import "normalize";
 @import "sanitize";
 @import "typography";
+
+// Remove default margin and padding from figures
+figure {
+  margin: 0;
+  padding: 0;
+}

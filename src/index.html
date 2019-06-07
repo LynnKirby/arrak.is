@@ -2,10 +2,11 @@
 preload: /assets/under-construction.gif
 ---
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns#">
+<html lang="en" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="utf-8">
     <title>Lynn Kirby | arrak.is</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Twitter and OpenGraph garbage -->
     <meta property="og:title" content="Lynn Kirby | arrak.is">
@@ -83,24 +84,33 @@ preload: /assets/under-construction.gif
       }
 
       a {
-        color: hotpink;
         text-decoration: none;
+        color: hotpink;
+        border-bottom: 1px dotted currentColor;
       }
 
-      a:hover {
+      a:hover, a:focus {
         color: red;
-        border-bottom: 1px dotted red;
       }
 
       header {
         text-align: center;
       }
+
+      img {
+        max-width: 100%;
+      }
+
     </style>
   </head>
   <body>
     <header>
-      <img src="assets/under-construction.gif">
-      <h1>Lynn's corner of the<br><em>information superhighway</em></h1>
+      <img
+        src="assets/under-construction.gif"
+        title="under construction image"
+        alt="Bart Simpson stands beside a sign labeled 'this site under construction' and is saying 'Don't worry, it's gonna be cool... Homer's on the job, man! With Homer Simpson using a jackhammer dangerously in the background"
+      >
+      <h1><a href="about">Lynn</a>'s corner of the<br><em>information superhighway</em></h1>
     </header>
     <table id="page-list">
       <tr>
