@@ -4,10 +4,11 @@ const jsbeautify = require("js-beautify");
 const htmlmin = require("html-minifier");
 
 module.exports = config => {
+  config.setDataDeepMerge(true);
   config.addPassthroughCopy("src/.well-known");
 
   config.addFilter("htmlDateString", date => {
-    return DateTime.fromJSDate(date).toFormat("yyyy-LL-dd");
+    return DateTime.fromJSDate(date, { zone: "UTC" }).toFormat("yyyy-LL-dd");
   });
 
   // Fake markdown-it library that's actually Pandoc

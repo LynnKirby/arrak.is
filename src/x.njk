@@ -1,0 +1,58 @@
+---
+layout: base
+title: Weird
+description: A collection of uncategorizable web things I've made.
+globalnav:
+  theme: dark
+  category: weird
+---
+<style>
+  body {
+    background: #222;
+  }
+
+  .content {
+    margin: 0 auto;
+    padding: 1em;
+    max-width: 40em;
+    color: hotpink;
+    font-size: 20px;
+  }
+
+  .content h1 {
+    text-align: center;
+  }
+
+  .weird-page-list tr td:first-child {
+    color: grey;
+    padding-right: 1em;
+  }
+
+  .content a {
+    text-decoration: none;
+    color: hotpink;
+    border-bottom: 1px dotted currentColor;
+  }
+
+  .content a:hover, .content a:focus {
+    color: red;
+  }
+
+  .content header {
+    text-align: center;
+  }
+
+  .content img {
+    max-width: 100%;
+  }
+</style>
+
+<h1>Weird</h1>
+<table class="weird-page-list">
+  {% for post in collections.weird | reverse %}
+  <tr>
+    <td>{{ post.date | htmlDateString }}</td>
+    <td><a href="{{ post.url }}">{{ post.data.title }}</a></td>
+  </tr>
+  {% endfor %}
+</table>

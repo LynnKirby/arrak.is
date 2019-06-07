@@ -55,26 +55,18 @@ globalnav:
     max-width: 40em;
   }
 
-  .content h1 {
-    text-align: center;
-  }
-
-  .content #page-list tr td:first-child {
-    color: grey;
-    padding-right: 1em;
-  }
-
   .content a {
     text-decoration: none;
     color: hotpink;
     border-bottom: 1px dotted currentColor;
   }
 
-  .content a:hover, .content a:focus {
+  .content a:hover,
+  .content a:focus {
     color: red;
   }
 
-  .content header {
+  .content {
     text-align: center;
   }
 
@@ -85,24 +77,12 @@ globalnav:
 {% endblock %}
 
 {% block content %}
-<div class="sans">
 <header>
+  <h1><a href="about">Lynn</a>'s corner of the<br><em>information superhighway</em></h1>
   <img
     src="assets/under-construction.gif"
     title="under construction image"
     alt="Bart Simpson stands beside a sign labeled 'this site under construction' and is saying 'Don't worry, it's gonna be cool... Homer's on the job, man! With Homer Simpson using a jackhammer dangerously in the background"
   >
-  <h1><a href="about">Lynn</a>'s corner of the<br><em>information superhighway</em></h1>
 </header>
-<table id="page-list">
-  <tr>
-    <td>2019-03-30</td>
-    <td><a href="x/john-brown/">Ye soldiers of freedom, then strike, while strike ye may</a></td>
-  </tr>
-  <tr>
-    <td>1990-04-18</td>
-    <td><a href="x/welcome-to-the-machine/">Welcome to the machine</a></td>
-  </tr>
-</table>
-</div>
 {% endblock %}
