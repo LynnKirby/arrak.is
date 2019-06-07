@@ -1,8 +1,9 @@
 doctype html
-html(prefix="og: http://ogp.me/ns#")
+html(prefix="og: http://ogp.me/ns#", lang="en-CA")
   head
     meta(charset="utf-8")
     title Lynn Kirby | arrak.is
+    meta(name="viewport", content="width=device-width, initial-scale=1")
 
     //- Twitter and OpenGraph garbage
     meta(property="og:title", content="Lynn Kirby | arrak.is")
@@ -11,7 +12,7 @@ html(prefix="og: http://ogp.me/ns#")
     link(rel="canonical", content="https://arrak.is")
     meta(property="og:image", content="https://arrak.is/og-image.jpg")
     meta(property="og:description", content="Lynn's corner of the information superhighway.")
-    meta(property="description", content="Lynn's corner of the information superhighway.")
+    meta(name="description", content="Lynn's corner of the information superhighway.")
     meta(property="og:site_name", content="arrak.is")
     meta(property="twitter:site", content="@ALynnkToThePast")
 
@@ -91,9 +92,17 @@ html(prefix="og: http://ogp.me/ns#")
         text-align: center;
       }
 
+      img {
+        max-width: 100%
+      }
+
   body
-    .header
-      img(src="assets/under-construction.gif")
+    header
+      img(src="assets/under-construction.gif", title="under construction image",
+      alt="Bart Simpson stands beside a sign labeled 'this site under "
+        + "construction' and is saying 'Don't worry, it's gonna be cool... "
+        + "Homer's on the job, man! With Homer Simpson using a jackhammer "
+        + "dangerously in the background.")
       h1 Lynn's corner of the<br>
         em information superhighway
     table#page-list
