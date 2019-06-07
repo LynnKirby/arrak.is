@@ -1,5 +1,5 @@
 [build]
-command = "gulp"
+command = "sudo apt-get install pandoc && gulp"
 publish = "dist"
 
 # Redirect from Netlify to my domain
