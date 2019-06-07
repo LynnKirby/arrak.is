@@ -24,7 +24,7 @@ module.exports = config => {
       output: "dist"
     },
     dataTemplateEngine: "njk",
-    markdownTemplateEngine: "njk",
+    markdownTemplateEngine: false,
     htmlTemplateEngine: "njk",
     templateFormats: ["html", "md", "njk", "11ty.js"],
   }
