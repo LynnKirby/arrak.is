@@ -1,0 +1,16 @@
+// SPDX-License-Identifier: CC0-1.0
+// Written 2019 Lynn Kirby
+
+@import "_typography-vars";
+
+.sans {
+  font-family: var(--font-family-sans, #{$font-family-sans});
+}
+
+.serif {
+  font-family: var(--font-family-serif, #{$font-family-serif});
+}
+
+.mono {
+  font-family: var(--font-family-mono, #{$font-family-mono});
+}

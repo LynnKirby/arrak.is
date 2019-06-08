@@ -1,13 +1,13 @@
 // SPDX-License-Identifier: CC0-1.0
 // Written 2019 Lynn Kirby
 
-// Import normalizations
 @import "base/_normalize";
 @import "base/_sanitize";
+@import "base/_typography";
+@import "base/_global-nav";
 
-// Import only the generic/non-colored global navbar styles.
-@import "global-nav/global-nav";
-
+// Hack used to prevent CSS transitions from running on page load. Some browser
+// bugs, I guess. Attach .preload to <body> then remove it on window load.
 .preload * {
   transition: none !important;
   -webkit-transition: none !important;

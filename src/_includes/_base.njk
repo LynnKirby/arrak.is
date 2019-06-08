@@ -30,7 +30,9 @@
   {% endif %}
 
   <link rel="stylesheet" href="/styles/base.css">
-  <link rel="stylesheet" href="/styles/global-nav-{{ globalnav.theme }}.css">
+  {% if theme %}
+  <link rel="stylesheet" href="/styles/theme-{{ theme }}.css">
+  {% endif %}
 
   {% block additional_head_content %}
   {% endblock %}
@@ -38,10 +40,11 @@
 <body class="preload">
   <nav class="global-nav">
     <a href="/" class="global-nav-logo">arrak·is</a>
-    <label for="global-nav-toggle-checkbox" class="global-nav-toggle">☰</label>
     <input type='checkbox' id='global-nav-toggle-checkbox'/>
+    <label for="global-nav-toggle-checkbox" class="global-nav-toggle">☰</label>
     <ul class="global-nav-links">
       <li><a href="/" class="{% if globalnav.category == 'home' %}global-nav-enabled{% endif %}">Home</a></li>
+      <li><a href="/note/" class="{% if globalnav.category == 'note' %}global-nav-enabled{% endif %}">Notes</a></li>
       <li><a href="/x/" class="{% if globalnav.category == 'weird' %}global-nav-enabled{% endif %}">Weird</a></li>
       <li><a href="/about/" class="{% if globalnav.category == 'about' %}global-nav-enabled{% endif %}">About</a></li>
     </ul>

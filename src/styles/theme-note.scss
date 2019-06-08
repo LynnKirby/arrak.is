@@ -1,0 +1,625 @@
+@import "base/_typography-vars";
+
+//******************************************************************************
+// Index page
+
+.note-index {
+  list-style: none;
+  margin: 0;
+  padding: 0 !important;
+}
+
+.note-index-date {
+  font-family: $font-family-mono;
+  color: #738491;
+  font-size: 0.8em;
+}
+
+//******************************************************************************
+// Page layout
+
+.content {
+  max-width: 40em;
+  align-self: center;
+  padding: 0 1em 1em 1em;
+}
+
+:root {
+  color: #24292e;
+  background-color: white;
+}
+
+// Remove margins on the top and bottom elements
+.content {
+  &>*:first-child {
+    margin-top: 0 !important;
+  }
+
+  &>*:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  &::before {
+    display: table;
+    content: "";
+  }
+
+  &::after {
+    display: table;
+    clear: both;
+    content: "";
+  }
+}
+
+//******************************************************************************
+// Basic font setup
+
+$text: #dadada;
+$active: rgb(243, 243, 243);
+
+:root {
+  --global-nav-background: black;
+  --global-nav-text-color: #{$text};
+  --global-nav-text-color-active: #{$active};
+  --global-nav-logo-color: #{$text};
+  --global-nav-logo-color-active: #{$active};
+  //--global-nav-font-family
+}
+
+:root {
+  font-family: $font-family-sans;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.content {
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family: $font-family-mono;
+  }
+}
+
+//******************************************************************************
+// Links
+
+.content {
+  a[href] {
+    color: #034575;
+    text-decoration: none !important;
+    border-bottom: 1px solid #707070;
+    padding: 0 1px 0;
+    margin: 0 -1px 0;
+
+    &:visited {
+      border-bottom-color: #BBB;
+    }
+
+    &:focus,
+    &:hover {
+      background: #f8f8f8;
+      background: rgba(75%, 75%, 75%, .25);
+      border-bottom-width: 3px;
+      margin-bottom: -2px;
+    }
+
+    &:active {
+      color: #C00;
+      border-color: #C00;
+    }
+  }
+}
+
+//******************************************************************************
+// Lists
+
+.content {
+  // Ordered/unordered
+  ul, ol {
+    padding-left: 2em;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    ol {
+      list-style-type: lower-roman;
+    }
+
+    ul ol,
+    ol ol {
+      list-style-type: lower-alpha;
+    }
+  }
+
+  li > p {
+    margin-top: 16px;
+  }
+
+  li + li {
+    margin-top: 0.25em;
+  }
+
+  // Definition
+  dt {
+    font-style: normal;
+    font-weight: bold;
+    line-height: 1.2;
+
+    padding: 0;
+    margin-top: 1em;
+  }
+
+  dd {
+    margin: 0 0 .5em 2em;
+    padding: 0;
+  }
+}
+
+//******************************************************************************
+// Headings
+
+.content {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 1.2rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  /*h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #eaecef;
+  }*/
+
+  header {
+    text-align: center;
+  }
+
+  h1.title {
+    font-size: 1.5em;
+  }
+
+  .subtitle {
+    display: block;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    font-size: 0.8em;
+    margin-top: 1.2rem;
+    color: #5a6774;
+    font-weight: 600;
+  }
+
+  .subtitle + .title {
+    margin-top: 0;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #eaecef;
+  }
+
+  h2 {
+    font-size: 1.25em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #eaecef;
+  }
+
+  h3 {
+    font-size: 1em;
+  }
+
+  h4, h5, h6 {
+    font-size: 0.85em;
+    color: #6a737d;
+  }
+}
+
+//
+
+.content {
+  figcaption {
+    color: #5a6774;
+    font-size: 0.8em;
+    text-align: center;
+    padding: 0.5em;
+  }
+}
+
+//******************************************************************************
+// Tables
+
+.content {
+  table {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    border-spacing: 0;
+    border-collapse: collapse;
+
+    th {
+      font-weight: 600;
+    }
+
+    th, td {
+      padding: 6px 13px;
+      border: 1px solid #dfe2e5;
+    }
+
+    tr {
+      background-color: #fff;
+      border-top: 1px solid #c6cbd1;
+
+      &:nth-child(2n) {
+        background-color: #f6f8fa;
+      }
+    }
+  }
+}
+
+//******************************************************************************
+// Horizontal rule
+
+.content {
+  hr {
+    box-sizing: content-box;
+    height: 0.25em;
+    margin: 24px 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #e1e4e8;
+    border: 0;
+
+    &::before {
+    display: table;
+    content: "";
+    }
+
+    &::after {
+    display: table;
+    clear: both;
+    content: "";
+    }
+  }
+}
+
+//******************************************************************************
+// Block text styles
+
+.content {
+  p {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  blockquote {
+    margin: 0;
+    padding: 0 1em;
+    color: #6a737d;
+    border-left: 0.25em solid #dfe2e5;
+
+    &>:first-child {
+      margin-top: 0;
+    }
+
+    &>:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+//******************************************************************************
+// Keyboard designation
+
+.content {
+  kbd {
+    display: inline-block;
+    padding: 3px 5px;
+    font-size: 11px;
+    line-height: 10px;
+    color: #444d56;
+    vertical-align: middle;
+    background-color: #fafbfc;
+    border: solid 1px #c6cbd1;
+    border-bottom-color: #959da5;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 #959da5;
+  }
+}
+
+.content {
+  p,
+  blockquote,
+  ul,
+  ol,
+  dl,
+  table,
+  pre {
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+
+  img {
+    max-width: 100%;
+    box-sizing: content-box;
+    background-color: #fff;
+  }
+
+  code {
+    padding: 0;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    margin: 0;
+    font-size: 0.85em;
+  }
+
+  code::before,
+  code::after {
+    letter-spacing: -0.2em;
+    content: "\00a0";
+  }
+
+  pre {
+    word-wrap: normal;
+  }
+
+  pre > code {
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    word-break: normal;
+    white-space: pre;
+    background: transparent;
+    border: 0;
+  }
+
+  .highlight {
+    margin-bottom: 16px;
+  }
+
+  .highlight pre {
+    margin-bottom: 0;
+    word-break: normal;
+  }
+
+  .highlight pre,
+  pre {
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f6f8fa;
+    border-radius: 3px;
+  }
+
+  pre code {
+    display: inline;
+    max-width: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    line-height: inherit;
+    word-wrap: normal;
+    background-color: transparent;
+    border: 0;
+  }
+
+  pre code::before,
+  pre code::after {
+    content: normal;
+  }
+}
+
+//******************************************************************************
+// Small Pandoc styles
+
+.content {
+  span {
+    .smallcaps {
+      font-variant: small-caps;
+    }
+
+    .underline {
+      text-decoration: underline;
+    }
+  }
+}
+
+//******************************************************************************
+// Styles needed for Pandoc
+// SPDX-License-Identifier: Unlicense
+// Modified from "bare-bones.scss" v2.1 (2017-12-28)
+// https://github.com/tajmone/pandoc-goodies/blob/master/skylighting-css/sass-templates/barebones.scss
+
+.content {
+  a.sourceLine {
+    display: inline-block;
+    line-height: 1.25;
+    pointer-events: none;
+    color: inherit;
+    text-decoration: inherit;
+
+    &:empty {
+        height: 1.2em;
+        position: absolute;
+    }
+  }
+
+  .sourceCode {
+    overflow: visible;
+  }
+
+  code.sourceCode {
+    white-space: pre;
+    position: relative;
+  }
+
+  div.sourceCode {
+    margin: 1em 0;
+  }
+
+  pre.sourceCode {
+    margin: 0;
+  }
+
+  @media screen {
+    div.sourceCode {
+      overflow: auto;
+    }
+
+    a.sourceLine::before {
+      text-decoration: underline; /*Line Numbers Underlining */
+    }
+  }
+
+  @media print {
+    code.sourceCode {
+      white-space: pre-wrap;
+    }
+
+    a.sourceLine {
+      text-indent: -1em;
+      padding-left: 1em;
+    }
+  }
+
+  pre.numberSource a.sourceLine {
+    position: relative;
+
+    &:empty {
+      position: absolute;
+    }
+
+    &::before {
+      content: attr(data-line-number);
+      position: absolute;
+      left: -5em;
+      text-align: right;
+      vertical-align: baseline;
+      border: none;
+      pointer-events: all;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      padding: 0 4px;
+      width: 4em;
+      /*background-color: #232629;*/  /* Line Numbers Gutter BG Color */
+      /*color: #7a7c7d;*/             /* Line Numbers Color */
+    }
+  }
+}
+
+//******************************************************************************
+// Pandoc highlight tokens
+// TODO: Separate file, newly generated.
+
+.content {
+  /* Other */
+code span.ot {
+  color: #ff4000;
+}
+/* Attribute */
+code span.at {
+}
+/* SpecialString */
+code span.sc {
+  color: #008080;
+}
+/* Annotation */
+code span.an {
+  color: #008000;
+}
+/* String */
+code span.st {
+  color: #008080;
+}
+/* ControlFlow */
+code span.cf {
+  color: #0000ff;
+}
+/* Operator */
+code span.op {
+}
+/* Error */
+code span.er {
+  color: #ff0000;
+  font-weight: bold;
+}
+/* Alert */
+code span.al {
+  color: #ff0000;
+}
+/* Variable */
+code span.va {
+}
+/* BuiltIn */
+code span.bu {
+}
+/* Extension */
+code span.ex {
+}
+/* Preprocessor */
+code span.pp {
+  color: #ff4000;
+}
+/* Information */
+code span.in {
+  color: #008000;
+}
+/* VerbatimString */
+code span.vs {
+  color: #008080;
+}
+/* Warning */
+code span.wa {
+  color: #008000;
+  font-weight: bold;
+}
+/* Documentation */
+code span.do {
+  color: #008000;
+}
+/* Import */
+code span.im {
+}
+/* Char */
+code span.ch {
+  color: #008080;
+}
+/* Comment */
+code span.co {
+  color: #008000;
+}
+/* CommentVar */
+code span.cv {
+  color: #008000;
+}
+/* Constant */
+code span.cn {
+}
+/* SpecialChar */
+code span.sc {
+  color: #008080;
+}
+/* Keyword */
+code span.kw {
+  color: #0000ff;
+}
+pre.numberSource a.sourceLine::before {
+  color: #aaaaaa;
+}
+div.sourceCode {
+}
+
+}

@@ -1,10 +1,12 @@
 ---
 title: Lynn Kirby
 description: Lynn's corner of the information superhighway.
-preload: /assets/under-construction.gif
+preload:
+  - /assets/under-construction.gif
+  - /styles/base.css
+theme: black-pink
 globalnav:
   category: home
-  theme: dark
 ---
 {% extends "_base.njk" %}
 
@@ -45,12 +47,12 @@ globalnav:
 <style>
   body {
     background: black;
-    color: hotpink;
     font-size: 20px;
   }
 
   .content {
-    margin: 0 auto;
+    color: hotpink;
+    align-self: center;
     padding: 1em;
     max-width: 40em;
   }

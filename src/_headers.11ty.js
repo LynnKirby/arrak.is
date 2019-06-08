@@ -34,6 +34,10 @@ module.exports = class {
 
         if (/\.(png|jpe?g|gif|webp|svg)$/.test(file)) {
           type = "image";
+        } else if (/\.(ttf)$/.test(file)) {
+          type = "font";
+        } else if (/\.(css)$/.test(file)) {
+          type = "style";
         }
 
         if (!type) {

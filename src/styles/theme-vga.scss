@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "IBM VGA8";
+  src: url("/assets/PxPlus_IBM_VGA8.ttf");
+}
+
+:root {
+  --global-nav-background: transparent;
+  --global-nav-font-family: "IBM VGA8", monospace;
+  --global-nav-text-color: #cbcbcb;
+  --global-nav-logo-color: #cbcbcb;
+  --global-nav-text-color-active: #41FF00;
+  --global-nav-logo-color-active: #41FF00;
+  background: black;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #41FF00;
+  font-family: "IBM VGA8", monospace;
+}
+
+pre {
+  line-height: 1;
+  color: #41FF00;
+  font-family: "IBM VGA8", monospace;
+}

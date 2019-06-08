@@ -16,13 +16,24 @@ module.exports = config => {
   config.setLibrary("md", {
     set() { /* no-op, not implementing settings */ },
     render(input) {
-      const { stdout } = execa.sync("pandoc", ["--from=markdown", "--to=html5"], { input });
+      const { stdout, stderr } = execa.sync("pandoc", [
+        "--from=markdown",
+        "--to=html5",
+        "--filter=pandoc-citeproc",
+      ], { input });
+
+      if (stderr) {
+        console.log(`[pandoc] ${stderr}`);
+      }
+
       return stdout;
     },
   });
 
-  config.addTransform("html-beautify", function(content, outputPath) {
-    if( outputPath.endsWith(".html") ) {
+  // HTML fixer-upper transform. Remove cruft, then beautify. Means I don't have
+  // to care about whitespace control in templates.
+  config.addTransform("html-beautify", (content, outputPath) => {
+    if (outputPath.endsWith(".html")) {
       const cleaned = htmlmin.minify(content, {
         removeComments: true
       });
