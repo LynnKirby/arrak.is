@@ -1,0 +1,29 @@
+// SPDX-License-Identifier: 0BSD
+// Written 2019 Lynn Kirby
+
+@import "_utility";
+@import "site/_global-nav";
+
+// Remove default margin and padding from figures
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+// Shell stuff
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+

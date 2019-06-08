@@ -3,8 +3,6 @@ layout: base
 title: Weird
 description: A collection of uncategorizable web things I've made.
 theme: black-pink
-globalnav:
-  category: weird
 ---
 <style>
   body {
@@ -50,9 +48,11 @@ globalnav:
 <h1>Weird</h1>
 <table class="weird-page-list">
   {% for post in collections.weird | reverse %}
+  {% if post.url != page.url %}
   <tr>
     <td>{{ post.date | htmlDateString }}</td>
     <td><a href="{{ post.url }}">{{ post.data.title }}</a></td>
   </tr>
+  {% endif %}
   {% endfor %}
 </table>

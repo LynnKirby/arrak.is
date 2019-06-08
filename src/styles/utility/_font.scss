@@ -44,3 +44,15 @@ $font-family-mono:
   /* fallback */ monospace,
   $font-family-emoji
   !default;
+
+%sans {
+  font-family: var(--font-family-sans, #{$font-family-sans});
+}
+
+%serif {
+  font-family: var(--font-family-serif, #{$font-family-serif});
+}
+
+%mono {
+  font-family: var(--font-family-mono, #{$font-family-mono});
+}

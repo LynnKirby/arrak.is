@@ -29,7 +29,9 @@
     <meta name="description" content="{{ description }}">
   {% endif %}
 
-  <link rel="stylesheet" href="/styles/base.css">
+  <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+  <link rel="stylesheet" href="/styles/utility.css">
+  <link rel="stylesheet" href="/styles/site.css">
   {% if theme %}
   <link rel="stylesheet" href="/styles/theme-{{ theme }}.css">
   {% endif %}
@@ -56,6 +58,7 @@
   <script>
     window.addEventListener("load", function() {
       document.getElementsByTagName("body")[0].classList.remove("preload");
+      cssVars();
     });
   </script>
 </body>

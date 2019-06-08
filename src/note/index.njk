@@ -3,8 +3,6 @@ layout: note
 title: Notes
 description: Short ideas and explanations
 theme: note
-globalnav:
-  category: note
 ---
 <p>
   A collection of ideas and rough thoughts, mostly written
@@ -12,9 +10,11 @@ globalnav:
 </p>
 <ul class="note-index">
   {% for post in collections.note | reverse %}
+  {% if post.url != page.url %}
   <li>
     <span class="note-index-date">{{ post.date | htmlDateString }} » </span>
     <a href="{{ post.url }}" class="note-index-title">{{ post.data.title }}</a>
   </li>
+  {% endif %}
   {% endfor %}
 </ul>

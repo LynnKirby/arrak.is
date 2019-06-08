@@ -1,0 +1,9 @@
+// Hack used to prevent CSS transitions from running on page load. Attach
+// .preload to <body> then remove it on window load.
+.preload * {
+  transition: none !important;
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
