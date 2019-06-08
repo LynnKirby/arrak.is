@@ -1,11 +1,12 @@
 @font-face {
-  font-family: "IBM VGA8";
-  src: url("/assets/PxPlus_IBM_VGA8.ttf");
+  font-family: "Less Perfect DOS VGA";
+  src: url("/assets/fonts/perfect-dos-vga/LessPerfectDOSVGA.ttf");
 }
 
 :root {
   --global-nav-background: transparent;
-  --global-nav-font-family: "IBM VGA8", monospace;
+  --global-nav-font-family: "Less Perfect DOS VGA", monospace;
+  --global-nav-font-size: 16px;
   --global-nav-text-color: #cbcbcb;
   --global-nav-logo-color: #cbcbcb;
   --global-nav-text-color-active: #41FF00;
@@ -18,11 +19,12 @@
   justify-content: center;
   align-items: center;
   color: #41FF00;
-  font-family: "IBM VGA8", monospace;
+  font-family: "Less Perfect DOS VGA", monospace;
 }
 
 pre {
   line-height: 1;
   color: #41FF00;
-  font-family: "IBM VGA8", monospace;
+  font-family: "Less Perfect DOS VGA", monospace;
+  font-size: 16px;
 }

@@ -66,12 +66,6 @@ $active: rgb(243, 243, 243);
   //--global-nav-font-family
 }
 
-:root {
-  font-family: $font-family-sans;
-  font-size: 20px;
-  line-height: 1.6;
-}
-
 .content {
   code,
   kbd,
@@ -79,6 +73,10 @@ $active: rgb(243, 243, 243);
   pre {
     font-family: $font-family-mono;
   }
+
+  font-family: $font-family-sans;
+  font-size: 20px;
+  line-height: 1.6;
 }
 
 //******************************************************************************
