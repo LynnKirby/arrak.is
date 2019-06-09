@@ -6,6 +6,11 @@ satisfied with it. It's not very pretty because in order to get things done when
 expressing myself I have to intentionally make garbage, because garbage is
 imperfect but at least garbage exists.
 
+## Reviews
+
+> I love that Lynn's website is both retro and also a contemporary hellscape
+> &mdash; Alex
+
 ## Source structure
 
 * **`assets`**: Currently a dumping ground for website related things. Will
