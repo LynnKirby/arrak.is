@@ -5,10 +5,17 @@ const htmlmin = require("html-minifier");
 
 module.exports = config => {
   config.setDataDeepMerge(true);
-  config.addPassthroughCopy("src/.well-known");
 
-  config.addFilter("htmlDateString", date => {
+  config.addFilter("htmlDate", date => {
     return DateTime.fromJSDate(date, { zone: "UTC" }).toFormat("yyyy-LL-dd");
+  });
+
+  config.addFilter("readableDate", date => {
+    return DateTime.fromJSDate(date, { zone: "UTC" }).toFormat("dd LLL YYYY");
+  });
+
+  config.addFilter("formatDate", (date, format) => {
+    return DateTime.fromJSDate(date, { zone: "UTC" }).toFormat(format);
   });
 
   // Fake markdown-it library that's actually Pandoc
@@ -19,7 +26,9 @@ module.exports = config => {
       const { stdout, stderr } = execa.sync("pandoc", [
         "--from=markdown",
         "--to=html5",
+        "--no-highlight",
         "--filter=pandoc-citeproc",
+        "--filter=./scripts/pandoc-shiki.js",
       ], { input });
 
       if (stderr) {
@@ -50,12 +59,15 @@ module.exports = config => {
 
   return {
     dir: {
-      input: "src",
-      output: "dist"
+      input: "src/content",
+      includes: "../includes",
+      layouts: "../layouts",
+      data: "../data",
+      output: "public",
     },
     dataTemplateEngine: "njk",
     markdownTemplateEngine: false,
     htmlTemplateEngine: "njk",
     templateFormats: ["html", "md", "njk", "11ty.js"],
-  }
+  };
 };

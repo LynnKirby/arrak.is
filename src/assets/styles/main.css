@@ -1,0 +1,359 @@
+@import url("_normalize.css");
+@import url("../icon/_style.css");
+@import url("../fonts/alegreya/_style.css");
+
+/*!
+ * SPDX-License-Identifier: 0BSD
+ */
+
+/*******************************************************************************
+ * Normalizations and modernizations
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+/* No (ugly) border on embedded objects. */
+iframe {
+  border: none;
+}
+
+/* Fluid images by default. */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Expand body to entire viewport and remove padding/margins. */
+body {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+/* Make links match the surrounding text color. */
+a,
+a:hover,
+a:focus,
+a:visited {
+  color: currentColor;
+}
+
+/*******************************************************************************
+ * Functional utilities
+ */
+
+/* Text and fonts */
+
+.f-serif {
+  font-family:
+    "Alegreya",
+    serif;
+}
+
+.f-sans {
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    "Roboto",
+    "Ubuntu",
+    "Cantarell",
+    "Noto Sans",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
+}
+
+.f1, h1 { font-size: 2.25rem; }
+.f2, h2 { font-size: 1.5rem; }
+.f3, h3 { font-size: 1.25rem; }
+.f4, h4 { font-size: 1rem; }
+.f5, h5 { font-size: .875rem; }
+.f6, h6 { font-size: .75rem; }
+
+.f-lh1 { line-height: 1; }
+
+.lining-nums { font-variant-numeric: lining-nums; }
+
+.text-shadow {
+  text-shadow: 1px 1px 1px black;
+}
+
+/* Margins and padding */
+
+.ma-auto { margin: auto; }
+.ma0 { margin: 0; }
+.ma1 { margin: 0.25rem; }
+.ma2 { margin: 0.5rem; }
+.ma3 { margin: 1rem; }
+.ma4 { margin: 2rem; }
+
+.mb-auto { margin-bottom: auto; }
+.mb0 { margin-bottom: 0; }
+.mb1 { margin-bottom: 0.25rem; }
+.mb2 { margin-bottom: 0.5rem; }
+.mb3 { margin-bottom: 1rem; }
+.mb4 { margin-bottom: 2rem; }
+
+.mt-auto { margin-top: auto; }
+.mt0 { margin-top: 0; }
+.mt1 { margin-top: 0.25rem; }
+.mt2 { margin-top: 0.5rem; }
+.mt3 { margin-top: 1rem; }
+.mt4 { margin-top: 2rem; }
+
+.mr-auto { margin-right: auto; }
+.mr0 { margin-right: 0; }
+.mr1 { margin-right: 0.25rem; }
+.mr2 { margin-right: 0.5rem; }
+.mr3 { margin-right: 1rem; }
+.mr4 { margin-right: 2rem; }
+
+.ml-auto { margin-left: auto; }
+.ml0 { margin-left: 0; }
+.ml1 { margin-left: 0.25rem; }
+.ml2 { margin-left: 0.5rem; }
+.ml3 { margin-left: 1rem; }
+.ml4 { margin-left: 2rem; }
+
+.mx-auto { margin-left: auto; margin-right: auto; }
+.mx0 { margin-left: 0; margin-right: 0; }
+.mx1 { margin-left: 0.25rem; margin-right: 0.25rem; }
+.mx2 { margin-left: 0.5rem; margin-right: 0.5rem; }
+.mx3 { margin-left: 0.1rem; margin-right: 0.1rem; }
+.mx4 { margin-left: 0.2rem; margin-right: 0.2rem; }
+
+.my-auto { margin-top: auto; margin-bottom: auto; }
+.my0 { margin-top: 0; margin-bottom: 0; }
+.my1 { margin-top: 0.25rem; margin-bottom: 0.25rem; }
+.my2 { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+.my3 { margin-top: 0.1rem; margin-bottom: 0.1rem; }
+.my4 { margin-top: 0.2rem; margin-bottom: 0.2rem; }
+
+.pa0 { padding: 0; }
+.pa1 { padding: 0.25rem; }
+.pa2 { padding: 0.5rem; }
+.pa3 { padding: 1rem; }
+.pa4 { padding: 2rem; }
+
+/* Display */
+
+.block { display: block; }
+
+/* Flexbox */
+
+.flex { display: flex; }
+.flex-column { flex-direction: column; }
+.flex-auto { flex: 1 1 auto; }
+.flex-wrap { flex-wrap: wrap; }
+.order-0 { order: 0; }
+.order-1 { order: 1; }
+.order-2 { order: 2; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.align-items-baseline { align-items: baseline; }
+
+.logo {
+  /* Couldn't figure out how to make the image match the height of the
+  text automatically, so just calculate it by hand ¯\_(ツ)_/¯ */
+  height: calc(2.25rem + 1.5rem + 0.25rem);
+}
+
+/* Misc. */
+
+.cursor-default {
+  cursor: default;
+}
+
+/*
+ * Hack used to prevent CSS transitions from running on page load. Attach
+ * .preload to <body> then remove it on window load.
+*/
+.preload * {
+  transition: none !important;
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
+/*******************************************************************************
+ * Variables and page styles
+ */
+
+:root {
+  --text-color: #fffefe;
+  --text-color-secondary: #dfdfdf;
+  --text-color-tertiary: #cacaca;
+  --link-hover-color: hotpink;
+}
+
+body {
+  background: #343434 url("../prism.png");
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+footer {
+  color: var(--text-color-tertiary);
+}
+
+a {
+  transition: 0.2s ease-in;
+  transition-property: color, text-decoration-color;
+  text-decoration-color: var(--text-color-tertiary);
+}
+
+a:hover, a:focus {
+  color: var(--link-hover-color);
+  text-decoration-color: var(--link-hover-color);
+}
+
+/*******************************************************************************
+ * Style utilities
+ */
+
+.border-bottom-rainbow {
+  border: none;
+}
+
+.border-bottom-rainbow::after {
+  display: block;
+  content: "";
+  height: 3px;
+  background-image: linear-gradient(to right,
+    rgba(255, 0, 0, 1),
+    rgba(128, 0, 128, 1),
+    rgba(0, 0, 255, 1),
+    rgba(0, 255, 255, 1),
+    rgba(0, 128, 0, 1),
+    rgba(255, 255, 0, 1),
+    rgba(255, 0, 0, 1));
+  filter: opacity(0.8);
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px black;
+}
+
+.tertiary {
+  color: var(--text-color-tertiary);
+  font-size: 0.9rem;
+}
+
+.layout-center-column {
+  max-width: 45rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*******************************************************************************
+ * Components
+ */
+
+.WebringBanner {
+  width: 100%;
+  height: 80px;
+  filter: opacity(0.6);
+  transition: filter 0.2s ease-in;
+}
+
+.WebringBanner:hover,
+.WebringBanner:focus,
+.WebringBanner:active,
+.WebringBanner[data-active=true] {
+  filter: opacity(1);
+}
+
+.ElsewhereButton {
+  transition: filter 0.2s ease-in;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.2em 0.5em;
+  display: flex;
+  align-items: baseline;
+  color: var(--text-color);
+  border-radius: 6px;
+  margin-right: 0.5em;
+  justify-content: center;
+  min-width: 7.5em;
+  filter: brightness(0.9);
+  background: grey;
+  box-shadow: 0px 2px 0px #4c4c4c;
+}
+
+.ElsewhereButton:hover,
+.ElsewhereButton:focus {
+  color: currentColor;
+  filter: brightness(1);
+}
+
+.ElsewhereButton--green {
+  background: #1bce24;
+  box-shadow: 0px 2px 0px #19992f;
+}
+
+.ElsewhereButton--blue {
+  background: #1fa0f1;
+  box-shadow: 0px 2px 0px #1674ae;
+}
+
+.ElsewhereButton--pink {
+  background: hotpink;
+  box-shadow: 0px 2px 0px  rgb(160, 66, 113);
+}
+
+.ElsewhereButton--orange {
+  background: #fc6533;
+  box-shadow: 0px 2px 0px #a24121;
+}
+
+.ElsewhereButton-icon {
+  /* Little nudge for optical alignment. */
+  position: relative;
+  top: 0.05em;
+  margin-right: 0.5em;
+}
+
+.Project {
+  display: grid;
+  grid:
+    "preview date" auto
+    "preview title" auto
+    "preview description" 1fr
+    "preview links" auto
+    / 10rem auto;
+  grid-column-gap: 1rem;
+}
+
+.Project-preview {
+  grid-area: preview;
+}
+
+.Project-title {
+  grid-area: title;
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 1px black;
+  line-height: 1;
+}
+
+.Project-date {
+  grid-area: date;
+  color: var(--text-color-tertiary);
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.Project-description {
+  grid-area: description;
+}
+
+.Project-links {
+  grid-area: links;
+  font-size: 0.9rem;
+  color: var(--text-color-secondary);
+}

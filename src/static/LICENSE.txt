@@ -1,3 +1,13 @@
+arrak.is copyright and licensing
+================================
+
+Except as otherwise specified, creative works (including text, images, and code)
+on arrak.is are released under the modified 0BSD license below.
+
+See also: https://arrak.is/CREDITS.txt
+
+--------------------------------------------------------------------------------
+
 Permission to use, copy, modify, and/or distribute this work for any purpose
 with or without fee is hereby granted.
 

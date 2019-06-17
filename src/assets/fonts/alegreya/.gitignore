@@ -1,0 +1,7 @@
+# My working directory has all of the fonts but I don't really need to
+# put them all in the repo right now.
+Alegreya*
+!Alegreya-Regular.*
+!Alegreya-Italic.*
+!Alegreya-Bold.*
+!Alegreya-BoldItalic.*

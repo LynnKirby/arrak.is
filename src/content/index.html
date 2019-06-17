@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Basic meta -->
+  <title>Lynn Kirby | arrak.is</title>
+  <link rel="canonical" href="https://arrak.is">
+  <meta name="description" content="Lynn Kirby's homepage">
+
+  <!-- OpenGraph meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lynn Kirby">
+  <meta property="og:image" content="https://arrak.is/og-image.jpg">
+  <meta property="og:url" content="https://arrak.is">
+  <meta property="og:description" content="Lynn Kirby's homepage">
+  <meta property="og:site_name" content="arrak.is">
+  <meta property="twitter:site" content="@ALynnkToThePast">
+
+  <!-- JSON-LD meta -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Lynn Kirby",
+      "gender": "🏴",
+      "url": "https://arrak.is",
+      "sameAs": [
+        "https://twitter.com/ALynnkToThePast"
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Brand",
+      "url": "https://arrak.is",
+      "logo": "https://arrak.is/og-image.jpg"
+    }
+  </script>
+
+  <!-- Favicons, etc. -->
+  {% include "favicons.generated.html" %}
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/main.css">
+</head>
+
+<body class="layout-center-column flex flex-column f-sans pa2">
+  <header class="flex f-serif f-lh1 cursor-default mb4 mt3">
+    <div class="order-1 text-shadow">
+      <h1 class="ma0 mb1">Hi, I'm Lynn!</h1>
+      <div class="f2">I make weird and sometimes useful things.</div>
+    </div>
+    <img src="/android-chrome-192x192.png" class="order-0 mr3 logo">
+  </header>
+  <main class="flex-auto">
+    <section class="flex justify-between">
+      <a class="ElsewhereButton ElsewhereButton--green" href="mailto:hello@arrak.is" title="hello@arrak.is">
+        <i class="ElsewhereButton-icon icon-envelope"></i>
+        Email
+      </a>
+      <a class="ElsewhereButton" href="/pgp.txt" title="A29DA46AD2CDA33B">
+        <i class="ElsewhereButton-icon icon-key"></i>
+        PGP Key
+      </a>
+      <a class="ElsewhereButton ElsewhereButton--blue" href="https://twitter.com/ALynnkToThePast" title="@ALynnkToThePast">
+        <i class="ElsewhereButton-icon icon-twitter"></i>
+        Twitter
+      </a>
+      <a class="ElsewhereButton ElsewhereButton--pink" href="https://github.com/LynnKirby" title="LynnKirby">
+        <i class="ElsewhereButton-icon icon-github"></i>
+        GitHub
+      </a>
+      <a class="ElsewhereButton ElsewhereButton--orange" href="https://www.nicovideo.jp/user/89729190">
+        <i class="ElsewhereButton-icon icon-niconico"></i>
+        Niconico
+      </a>
+    </section>
+    <section>
+      <h2 class="f-serif text-shadow border-bottom-rainbow">Software</h2>
+      <div class="Project">
+        <img src="/assets/project-image/lynnmoji.png" class="Project-preview">
+        <h3 class="Project-title">Lynnmoji</h3>
+        <time class="Project-date" datetime="2019-06-04">4 Jun 2019</time>
+        <div class="Project-description">
+          Set of Twitter-style emoji that I add to every now and again.
+        </div>
+        <div class="Project-links">
+          <i class="icon-link"></i>
+          <a href="https://github.com/LynnKirby/lynnmoji">GitHub homepage</a>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2 class="f-serif text-shadow border-bottom-rainbow">Media</h2>
+      <div class="Project">
+        <img src="/assets/project-image/smack-my-bitch-up.png" class="Project-preview">
+        <h3 class="Project-title">Spawn × Prodigy</h3>
+        <time class="Project-date" datetime="2017-02-28">28 Feb 2017</time>
+        <div class="Project-description">
+          Terrible animated music video featuring Todd McFarlane's Spawn
+          and "Smack My Bitch Up" by Prodigy.
+        </div>
+        <div class="Project-links">
+          <i class="icon-link"></i>
+          <a href="https://www.nicovideo.jp/watch/sm35256761">Watch on Niconico</a>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2 class="f-serif text-shadow border-bottom-rainbow">Weird things</h2>
+      <div class="mb3">
+        <i class="icon-star tertiary"></i>
+        <a href="/weird/john-brown/" class="ma0 f4 fw400 ml1 mr1">Ye soldiers of freedom, then strike, while strike ye may</a>
+        <time datetime="2019-03-30" class="tertiary">30 March 2019</time>
+      </div>
+      <div>
+        <i class="icon-star tertiary"></i>
+        <a href="/weird/welcome-to-the-machine/" class="ma0 f4 fw400 ml1 mr1">Welcome to the machine</a>
+        <time datetime="1990-04-18" class="tertiary">18 April 1990</time>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="flex justify-between f5 mt3 mb2">
+      <div>
+        <a href="/LICENSE.txt">anticopyright 2019 Lynn Kirby</a>
+        &middot;
+        <a href="/CREDITS.txt">site design credits</span>
+      </div>
+      <div>
+        <a href="https://github.com/LynnKirby/arrak.is/blob/master/src/index.html">edit me on github</a>
+      </div>
+    </div>
+    <iframe src="https://cyberqueer.netlify.com/embed" class="WebringBanner" id="webring-banner"></iframe>
+  </footer>
+  <script>
+    window.addEventListener("load", function () {
+      document.getElementsByTagName("body")[0].classList.remove("preload");
+    });
+
+    // Here we're using the data-active attribute as a kind-of CSS selector
+    // based on whether the iframe banner is active even when it's the inside
+    // of the iframe that's active, something that can't be done with CSS
+    // alone. (i.e. the :active selector doesn't when iframe source is active).
+    var banner = document.getElementById("webring-banner");
+
+    window.addEventListener("focus", function () {
+      if (banner.dataset["active"]) {
+        banner.dataset["active"] = false;
+      }
+    });
+
+    window.addEventListener("blur", function () {
+      if (document.activeElement === banner) {
+        banner.dataset["active"] = true;
+      }
+    });
+  </script>
+</body>
+
+</html>

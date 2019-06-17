@@ -1,32 +1,37 @@
 # arrak.is
 
-This is my homepage. Code is a creative endeavor and the code of my homepage
-reflects my own desires and feelings. It changes all the time and I'm never
-satisfied with it. It's not very pretty because in order to get things done when
-expressing myself I have to intentionally make garbage, because garbage is
-imperfect but at least garbage exists.
-
-## Reviews
-
-> I love that Lynn's website is both retro and also a contemporary hellscape
-> &mdash; Alex
+This is my homepage, built with cobbled-together scripts instead of a fancy
+static site generator. Why? Code is a creative endeavor and I want the code of
+my homepage to reflect my own desires and feelings. 
 
 ## Source structure
 
-* **`assets`**: Currently a dumping ground for website related things. Will
-probably delete soon.
-
-* **`infra`**: Web infrastructure. Contains the Terraform configuration for the
+* `infra` - Web infrastructure. Contains the Terraform configuration for the
 `arrak.is` DNS records.
 
-* **`scripts`**: Useful scripts that don't have any other place to go.
+* `scripts` - Build-related scripts. Currently just various Pandoc filters.
 
-* **`src`**: The actual source of my site.
+* `src` - The actual source of my site.
+  * `assets` - Non-template assets that need to be compiled.
+  * `content` - Markdown, HTML, and templates.
+  * `data` - Raw data used when generating pages.
+  * `includes` - Partials, components, etc.
+  * `layouts` - Page layouts.
+  * `static` - Files copied directly to output.
 
-  * **`src/_includes`**: Layouts and partials.
+## How it builds
 
-  * **`src/assets`**: Various static files like images.
+1. Gulp:
 
-  * **`src/styles`**: Sass source files.
+    * copies the `static` directory
+    * builds styles and such in `assets`
 
-  * **`src/x`**: My web eXperiments.
+2. Eleventy compiles templates in `content` using `data`, `layouts`, and
+   `includes`.
+
+3. Gulp again. Post-processing of the already built files:
+
+    * Purge CSS of unused styles, inline critical styles.
+    * Inline resources marked with `inline` attribute.
+    * Enhance `<link rel=preload>` tags by replicating them as headers in the
+      Netlify `_headers` file, enabling HTTP/2 server push for those assets.
