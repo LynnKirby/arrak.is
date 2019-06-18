@@ -45,7 +45,7 @@
   {% include "favicons.generated.html" %}
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/main.css">
+  <link rel="stylesheet" href="/assets/style/main.css">
 </head>
 
 <body class="layout-center-column flex flex-column f-sans pa2">
@@ -54,7 +54,7 @@
       <h1 class="ma0 mb1">Hi, I'm Lynn!</h1>
       <div class="f2">I make weird and sometimes useful things.</div>
     </div>
-    <img src="/assets/header-emoji/regular-lynn.svg" class="order-0 mr3 logo">
+    <img src="/assets/image/header-emoji/regular-lynn.svg" class="order-0 mr3 logo">
   </header>
   <main class="flex-auto">
     <section class="flex justify-between">
@@ -82,7 +82,7 @@
     <section>
       <h2 class="f-serif text-shadow border-bottom-rainbow">Software</h2>
       <div class="Project">
-        <img src="/assets/project-image/lynnmoji.png" class="Project-preview">
+        <img src="/assets/image/project-image/lynnmoji.png" class="Project-preview">
         <h3 class="Project-title">Lynnmoji</h3>
         <time class="Project-date" datetime="2019-06-04">4 Jun 2019</time>
         <div class="Project-description">
@@ -97,7 +97,7 @@
     <section>
       <h2 class="f-serif text-shadow border-bottom-rainbow">Media</h2>
       <div class="Project">
-        <img src="/assets/project-image/smack-my-bitch-up.png" class="Project-preview">
+        <img src="/assets/image/project-image/smack-my-bitch-up.png" class="Project-preview">
         <h3 class="Project-title">Spawn × Prodigy</h3>
         <time class="Project-date" datetime="2017-02-28">28 Feb 2017</time>
         <div class="Project-description">
@@ -130,34 +130,12 @@
         <a href="/license">anticopyright 2019 Lynn Kirby</a>
       </div>
       <div>
-        <a href="https://github.com/LynnKirby/arrak.is/blob/master/src/index.html">edit me on github</a>
+        <a href="https://github.com/LynnKirby/arrak.is/blob/master/{{ page.inputPath }}">edit me on github</a>
       </div>
     </div>
     <iframe src="https://cyberqueer.netlify.com/embed" class="WebringBanner" id="webring-banner"></iframe>
   </footer>
-  <script>
-    window.addEventListener("load", function () {
-      document.getElementsByTagName("body")[0].classList.remove("preload");
-    });
-
-    // Here we're using the data-active attribute as a kind-of CSS selector
-    // based on whether the iframe banner is active even when it's the inside
-    // of the iframe that's active, something that can't be done with CSS
-    // alone. (i.e. the :active selector doesn't when iframe source is active).
-    var banner = document.getElementById("webring-banner");
-
-    window.addEventListener("focus", function () {
-      if (banner.dataset["active"]) {
-        banner.dataset["active"] = false;
-      }
-    });
-
-    window.addEventListener("blur", function () {
-      if (document.activeElement === banner) {
-        banner.dataset["active"] = true;
-      }
-    });
-  </script>
+  <script src="/assets/script/main.js"></script>
 </body>
 
 </html>

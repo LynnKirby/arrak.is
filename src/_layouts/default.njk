@@ -20,13 +20,13 @@
   <meta property="twitter:site" content="@ALynnkToThePast">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/main.css">
+  <link rel="stylesheet" href="/assets/style/main.css">
 </head>
 
 <body class="layout-center-column flex flex-column f-sans pa2">
   <header class="flex f-serif f-lh1 cursor-default mt3">
     <h1 class="ma0 mb1 order-1">{{ title }}</h1>
-    <img src="/assets/header-emoji/regular-lynn.svg" class="order-0 mr3 logo-small">
+    <img src="/assets/image/header-emoji/regular-lynn.svg" class="order-0 mr3 logo-small">
   </header>
   <main class="flex-auto">
     {{ content | safe }}
@@ -42,29 +42,7 @@
     </div>
     <iframe src="https://cyberqueer.netlify.com/embed" class="WebringBanner" id="webring-banner"></iframe>
   </footer>
-  <script>
-    window.addEventListener("load", function () {
-      document.getElementsByTagName("body")[0].classList.remove("preload");
-    });
-
-    // Here we're using the data-active attribute as a kind-of CSS selector
-    // based on whether the iframe banner is active even when it's the inside
-    // of the iframe that's active, something that can't be done with CSS
-    // alone. (i.e. the :active selector doesn't when iframe source is active).
-    var banner = document.getElementById("webring-banner");
-
-    window.addEventListener("focus", function () {
-      if (banner.dataset["active"]) {
-        banner.dataset["active"] = false;
-      }
-    });
-
-    window.addEventListener("blur", function () {
-      if (document.activeElement === banner) {
-        banner.dataset["active"] = true;
-      }
-    });
-  </script>
+  <script src="/assets/script/main.js"></script>
 </body>
 
 </html>

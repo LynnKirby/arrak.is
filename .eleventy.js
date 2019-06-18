@@ -6,6 +6,11 @@ const htmlmin = require("html-minifier");
 module.exports = config => {
   config.setDataDeepMerge(true);
 
+  config.addPassthroughCopy("src/.well-known");
+  config.addPassthroughCopy("src/weird");
+  config.addPassthroughCopy("src/assets/image");
+  config.addPassthroughCopy("src/assets/font");
+
   config.addFilter("htmlDate", date => {
     return DateTime.fromJSDate(date, { zone: "UTC" }).toFormat("yyyy-LL-dd");
   });
@@ -59,15 +64,16 @@ module.exports = config => {
 
   return {
     dir: {
-      input: "src/content",
-      includes: "../includes",
-      layouts: "../layouts",
-      data: "../data",
+      input: "src",
+      includes: "_includes",
+      layouts: "_layouts",
+      data: "_data",
       output: "public",
     },
+    passthroughFileCopy: true,
     dataTemplateEngine: "njk",
     markdownTemplateEngine: false,
     htmlTemplateEngine: "njk",
-    templateFormats: ["html", "md", "njk", "11ty.js"],
+    templateFormats: ["html", "md", "njk", "11ty.js", "txt"],
   };
 };

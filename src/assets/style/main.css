@@ -1,7 +1,7 @@
 @import url("_regulate.css");
 @import url("_atomic.css");
-@import url("../icon/_style.css");
-@import url("../fonts/jost/_style.css");
+@import url("../font/icon/_style.css");
+@import url("../font/jost/_style.css");
 
 /*!
  * SPDX-License-Identifier: 0BSD
@@ -168,7 +168,7 @@ a:focus {
 .WebringBanner:hover,
 .WebringBanner:focus,
 .WebringBanner:active,
-.WebringBanner[data-active=true] {
+.WebringBanner[data-pseudofocus=true] {
   filter: opacity(1);
 }
 
