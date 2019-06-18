@@ -3,8 +3,8 @@
 import fs from "fs-extra";
 import gulp from "gulp";
 import * as execa from "gulp-execa";
-import filter from "gulp-filter";
-import { stream as favicons } from "favicons";
+// import filter from "gulp-filter";
+// import { stream as favicons } from "favicons";
 import sourcemaps from "gulp-sourcemaps";
 import gulpPostcss from "gulp-postcss";
 import cssnano from "cssnano";
@@ -21,7 +21,7 @@ import { uglify } from "rollup-plugin-uglify";
 // task: favicons
 // Output icons and other generated files to `public`.
 // The set of HTML meta tags gets saved as an include file in `src/_includes`.
-
+/*
 gulp.task("favicons", () => {
   const f = filter("*.html", { restore: true, passthrough: false });
 
@@ -45,7 +45,7 @@ gulp.task("favicons", () => {
 
   f.restore.pipe(gulp.dest("./public"));
   return stream;
-});
+});*/
 
 //******************************************************************************
 // Task: style
@@ -145,7 +145,7 @@ gulp.task("11ty:watch", execa.task("eleventy --watch"));
 
 gulp.task("build", gulp.series(
   "clean",
-  "favicons",
+  // "favicons",
   gulp.parallel("style", "11ty", "script"),
 ));
 
