@@ -53,6 +53,10 @@
   height: calc(2.25rem + 1.5rem + 0.25rem);
 }
 
+.logo-small {
+  height: 2rem;
+}
+
 /* Misc. */
 
 .cursor-default {
@@ -89,11 +93,10 @@
   --font-body: "Jost", var(--font-family-system-ui);
   --font-mono:"Hack", var(--font-family-system-mono);
   font-size: 18px;
+  --font-mono-size: 0.8rem;
 }
 
 body {
-  /*background: #343434 url("../prism.png");
-  background: #eee url("../prism-light.png");*/
   background: #eee;
   color: var(--text-color);
   line-height: 1.5;

@@ -111,3 +111,11 @@
 .py2 { padding-top: var(--margin-scale-2); padding-bottom: var(--margin-scale-2); }
 .py3 { padding-top: var(--margin-scale-3); padding-bottom: var(--margin-scale-3); }
 .py4 { padding-top: var(--margin-scale-4); padding-bottom: var(--margin-scale-4); }
+
+/*******************************************************************************
+ * Whitespace
+ */
+
+.ws-normal { white-space: normal; }
+.ws-pre { white-space: pre; }
+.ws-pre-wrap { white-space: pre-wrap; }

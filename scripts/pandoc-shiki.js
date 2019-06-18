@@ -29,10 +29,7 @@ pandoc.toJSONFilterAsync(async (type, value) => {
   // Weird destructuring going on here ¯\_(ツ)_/¯
   const [[,[alias]], code] = value;
   const lang = langAliasMap.get(alias);
-
-  if (!lang) {
-    throw new Error(`"Cannot syntax highlight unknown language ${alias}`);
-  }
+  if (!lang) return;
 
   const highlighter = await highlighterPromise;
   const html = codeToHtml(highlighter, code, lang);

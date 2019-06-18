@@ -169,6 +169,7 @@ code,
 kbd,
 samp,
 pre {
+  font-size: var(--font-mono-size, 1rem);
   font-family: var(--font-mono, --font-family-system-mono);
 }
 
