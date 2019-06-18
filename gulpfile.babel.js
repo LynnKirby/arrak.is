@@ -2,7 +2,7 @@
 
 import fs from "fs-extra";
 import gulp from "gulp";
-import * as execa from "gulp-execa";
+import execa from "execa";
 // import filter from "gulp-filter";
 // import { stream as favicons } from "favicons";
 import sourcemaps from "gulp-sourcemaps";
@@ -137,8 +137,8 @@ gulp.task("clean", () => fs.emptyDir("./public"));
 //******************************************************************************
 // Task: 11ty
 
-gulp.task("11ty", execa.task("eleventy"));
-gulp.task("11ty:watch", execa.task("eleventy --watch"));
+gulp.task("11ty", () => execa("eleventy"));
+gulp.task("11ty:watch", () => execa("eleventy --watch"));
 
 //******************************************************************************
 // Task: build (default)
