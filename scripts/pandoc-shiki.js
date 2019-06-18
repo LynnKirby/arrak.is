@@ -20,13 +20,13 @@ const langAliasMap = new Map(languages.flatMap(lang => {
   ];
 }));
 
-const theme = shiki.getTheme("nord");
+const theme = shiki.getTheme("light_vs");
 const highlighterPromise = shiki.getHighlighter({ theme });
 
 pandoc.toJSONFilterAsync(async (type, value) => {
   if (type !== "CodeBlock") return;
 
-  // Weird destructring going on here ¯\_(ツ)_/¯
+  // Weird destructuring going on here ¯\_(ツ)_/¯
   const [[,[alias]], code] = value;
   const lang = langAliasMap.get(alias);
 

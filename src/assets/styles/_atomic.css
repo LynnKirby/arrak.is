@@ -1,0 +1,113 @@
+/*!
+ * SPDX-License-Identifier: 0BSD
+ * ⚛️.css - atomic/functional utilities
+ */
+
+/*******************************************************************************
+ * Margins and padding
+ */
+
+ :root {
+  --margin-scale-1: 0.25rem;
+  --margin-scale-2: 0.5rem;
+  --margin-scale-3: 1rem;
+  --margin-scale-4: 2rem;
+}
+
+.ma-auto { margin: auto; }
+.ma0 { margin: 0; }
+.ma1 { margin: var(--margin-scale-1); }
+.ma2 { margin: var(--margin-scale-2); }
+.ma3 { margin: var(--margin-scale-3); }
+.ma4 { margin: var(--margin-scale-4); }
+
+.mb-auto { margin-bottom: auto; }
+.mb0 { margin-bottom: 0; }
+.mb1 { margin-bottom: var(--margin-scale-1); }
+.mb2 { margin-bottom: var(--margin-scale-2); }
+.mb3 { margin-bottom: var(--margin-scale-3); }
+.mb4 { margin-bottom: var(--margin-scale-4); }
+
+.mt-auto { margin-top: auto; }
+.mt0 { margin-top: 0; }
+.mt1 { margin-top: var(--margin-scale-1); }
+.mt2 { margin-top: var(--margin-scale-2); }
+.mt3 { margin-top: var(--margin-scale-3); }
+.mt4 { margin-top: var(--margin-scale-4); }
+
+.mr-auto { margin-right: auto; }
+.mr0 { margin-right: 0; }
+.mr1 { margin-right: var(--margin-scale-1); }
+.mr2 { margin-right: var(--margin-scale-2); }
+.mr3 { margin-right: var(--margin-scale-3); }
+.mr4 { margin-right: var(--margin-scale-4); }
+
+.ml-auto { margin-left: auto; }
+.ml0 { margin-left: 0; }
+.ml1 { margin-left: var(--margin-scale-1); }
+.ml2 { margin-left: var(--margin-scale-2); }
+.ml3 { margin-left: var(--margin-scale-3); }
+.ml4 { margin-left: var(--margin-scale-4); }
+
+.mx-auto { margin-left: auto; margin-right: auto; }
+.mx0 { margin-left: 0; margin-right: 0; }
+.mx1 { margin-left: var(--margin-scale-1); margin-right: var(--margin-scale-1); }
+.mx2 { margin-left: var(--margin-scale-2); margin-right: var(--margin-scale-2); }
+.mx3 { margin-left: var(--margin-scale-3); margin-right: var(--margin-scale-3); }
+.mx4 { margin-left: var(--margin-scale-4); margin-right: var(--margin-scale-4); }
+
+.my-auto { margin-top: auto; margin-bottom: auto; }
+.my0 { margin-top: 0; margin-bottom: 0; }
+.my1 { margin-top: var(--margin-scale-1); margin-bottom: var(--margin-scale-1); }
+.my2 { margin-top: var(--margin-scale-2); margin-bottom: var(--margin-scale-2); }
+.my3 { margin-top: var(--margin-scale-3); margin-bottom: var(--margin-scale-3); }
+.my4 { margin-top: var(--margin-scale-4); margin-bottom: var(--margin-scale-4); }
+
+.pa-auto { padding: auto; }
+.pa0 { padding: 0; }
+.pa1 { padding: var(--margin-scale-1); }
+.pa2 { padding: var(--margin-scale-2); }
+.pa3 { padding: var(--margin-scale-3); }
+.pa4 { padding: var(--margin-scale-4); }
+
+.pb-auto { padding-bottom: auto; }
+.pb0 { padding-bottom: 0; }
+.pb1 { padding-bottom: var(--margin-scale-1); }
+.pb2 { padding-bottom: var(--margin-scale-2); }
+.pb3 { padding-bottom: var(--margin-scale-3); }
+.pb4 { padding-bottom: var(--margin-scale-4); }
+
+.pt-auto { padding-top: auto; }
+.pt0 { padding-top: 0; }
+.pt1 { padding-top: var(--margin-scale-1); }
+.pt2 { padding-top: var(--margin-scale-2); }
+.pt3 { padding-top: var(--margin-scale-3); }
+.pt4 { padding-top: var(--margin-scale-4); }
+
+.pr-auto { padding-right: auto; }
+.pr0 { padding-right: 0; }
+.pr1 { padding-right: var(--margin-scale-1); }
+.pr2 { padding-right: var(--margin-scale-2); }
+.pr3 { padding-right: var(--margin-scale-3); }
+.pr4 { padding-right: var(--margin-scale-4); }
+
+.pl-auto { padding-left: auto; }
+.pl0 { padding-left: 0; }
+.pl1 { padding-left: var(--margin-scale-1); }
+.pl2 { padding-left: var(--margin-scale-2); }
+.pl3 { padding-left: var(--margin-scale-3); }
+.pl4 { padding-left: var(--margin-scale-4); }
+
+.px-auto { padding-left: auto; padding-right: auto; }
+.px0 { padding-left: 0; padding-right: 0; }
+.px1 { padding-left: var(--margin-scale-1); padding-right: var(--margin-scale-1); }
+.px2 { padding-left: var(--margin-scale-2); padding-right: var(--margin-scale-2); }
+.px3 { padding-left: var(--margin-scale-3); padding-right: var(--margin-scale-3); }
+.px4 { padding-left: var(--margin-scale-4); padding-right: var(--margin-scale-4); }
+
+.py-auto { padding-top: auto; padding-bottom: auto; }
+.py0 { padding-top: 0; padding-bottom: 0; }
+.py1 { padding-top: var(--margin-scale-1); padding-bottom: var(--margin-scale-1); }
+.py2 { padding-top: var(--margin-scale-2); padding-bottom: var(--margin-scale-2); }
+.py3 { padding-top: var(--margin-scale-3); padding-bottom: var(--margin-scale-3); }
+.py4 { padding-top: var(--margin-scale-4); padding-bottom: var(--margin-scale-4); }
