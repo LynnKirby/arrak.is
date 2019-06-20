@@ -1,0 +1,80 @@
+{
+  "elsewhere": [
+    {
+      "text": "Email",
+      "href": "mailto:lynn@arrak.is",
+      "title": "lynn@arrak.is",
+      "color": "green",
+      "icon": "envelope",
+      "rel": "me"
+    },
+    {
+      "text": "PGP Key",
+      "href": "/key.txt",
+      "title": "A29DA46AD2CDA33B",
+      "color": "red",
+      "icon": "key",
+      "rel": "pgpkey"
+    },
+    {
+      "text": "Github",
+      "href": "https://github.com/LynnKirby",
+      "title": "LynnKirby",
+      "color": "black",
+      "icon": "github",
+      "rel": "me"
+    },
+    {
+      "text": "Twitter",
+      "href": "https://twitter.com/ALynnkToThePast",
+      "title": "@ALynnkToThePast",
+      "color": "blue",
+      "icon": "twitter",
+      "rel": "me"
+    },
+    {
+      "text": "Niconico",
+      "href": "https://www.nicovideo.jp/user/89729190",
+      "color": "orange",
+      "icon": "niconico",
+      "rel": "me"
+    }
+  ],
+  "projectSectionOrder": ["software", "media"],
+  "projects": {
+    "software": {
+      "title": "Software",
+      "items": [
+        {
+          "preview": "lynnmoji.png",
+          "title": "Lynnmoji",
+          "date": "2019-06-04",
+          "description": "Set of Twitter-style emoji that I add to every now and again.",
+          "links": [
+            {
+              "text": "GitHub homepage",
+              "href": "https://github.com/LynnKirby/lynnmoji"
+            }
+          ]
+        }
+      ]
+    },
+    "media": {
+      "title": "Media",
+      "items": [
+        {
+          "preview": "smack-my-bitch-up.png",
+          "title": "Spawn × Prodigy",
+          "date": "2017-02-28",
+          "description": "Terrible animated music video featuring Todd McFarlane's Spawn and \"Smack My Bitch Up\" by Prodigy.",
+          "links": [
+            {
+              "text": "Watch on Niconico",
+              "href": "https://www.nicovideo.jp/watch/sm35256761"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

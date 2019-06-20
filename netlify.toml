@@ -2,13 +2,13 @@
 command = "gulp"
 publish = "public"
 
-# Redirect from Netlify to my domain
-[[redirects]]
-from = "http://arrakis.netlify.com/*"
-to = "https://arrak.is/:splat"
-status = 301
-force = true
-
 [dev]
 command = "gulp watch"
 port = 3000
+
+# Redirect from Netlify to my domain
+[[redirects]]
+  from = "http://arrakis.netlify.com/*"
+  to = "https://arrak.is/:splat"
+  status = 301
+  force = true

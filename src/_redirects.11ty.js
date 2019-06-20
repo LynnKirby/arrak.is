@@ -7,7 +7,7 @@ module.exports = class {
   data() {
     return {
       permalink: "_redirects",
-      excludeFromSitemap: true,
+      eleventyExcludeFromCollections: true,
     };
   }
 

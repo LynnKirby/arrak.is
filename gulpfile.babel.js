@@ -2,9 +2,9 @@
 
 import fs from "fs-extra";
 import gulp from "gulp";
-import execa from "execa";
-// import filter from "gulp-filter";
-// import { stream as favicons } from "favicons";
+import * as execa from "gulp-execa";
+import filter from "gulp-filter";
+import { stream as favicons } from "favicons";
 import sourcemaps from "gulp-sourcemaps";
 import gulpPostcss from "gulp-postcss";
 import cssnano from "cssnano";
@@ -21,11 +21,11 @@ import { uglify } from "rollup-plugin-uglify";
 // task: favicons
 // Output icons and other generated files to `public`.
 // The set of HTML meta tags gets saved as an include file in `src/_includes`.
-/*
+
 gulp.task("favicons", () => {
   const f = filter("*.html", { restore: true, passthrough: false });
 
-  const stream = gulp.src("./src/assets/logo.png")
+  const stream = gulp.src("./src/avatar.png")
     .pipe(favicons({
       url: "https://arrak.is",
       appName: "arrak.is",
@@ -45,7 +45,7 @@ gulp.task("favicons", () => {
 
   f.restore.pipe(gulp.dest("./public"));
   return stream;
-});*/
+});
 
 //******************************************************************************
 // Task: style
@@ -137,15 +137,15 @@ gulp.task("clean", () => fs.emptyDir("./public"));
 //******************************************************************************
 // Task: 11ty
 
-gulp.task("11ty", () => execa("eleventy"));
-gulp.task("11ty:watch", () => execa("eleventy --watch"));
+gulp.task("11ty", execa.task("eleventy"));
+gulp.task("11ty:watch", execa.task("eleventy --watch"));
 
 //******************************************************************************
 // Task: build (default)
 
 gulp.task("build", gulp.series(
   "clean",
-  // "favicons",
+  "favicons",
   gulp.parallel("style", "11ty", "script"),
 ));
 

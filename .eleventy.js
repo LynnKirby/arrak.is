@@ -1,3 +1,7 @@
+// SPDX-License-Identifier: 0BSD
+
+const path = require("path");
+const fs = require("fs-extra");
 const execa = require("execa");
 const { DateTime } = require("luxon");
 const jsbeautify = require("js-beautify");
@@ -6,21 +10,55 @@ const htmlmin = require("html-minifier");
 module.exports = config => {
   config.setDataDeepMerge(true);
 
-  config.addPassthroughCopy("src/.well-known");
-  config.addPassthroughCopy("src/weird");
   config.addPassthroughCopy("src/assets/image");
   config.addPassthroughCopy("src/assets/font");
 
-  config.addFilter("htmlDate", date => {
-    return DateTime.fromJSDate(date, { zone: "UTC" }).toFormat("yyyy-LL-dd");
+  // Override the default `url` filter
+  config.addFilter("url", url => {
+    if (url === "/") return "/";
+    if (url.endsWith("/")) return url.slice(0, -1);
+    if (url.endsWith("/index.html")) {
+      const sliced = url.slice(0, -"/index.html".length);
+      if (sliced === "") return "/";
+      return "/";
+    }
+    return url;
   });
 
-  config.addFilter("readableDate", date => {
-    return DateTime.fromJSDate(date, { zone: "UTC" }).toFormat("dd LLL YYYY");
-  });
+  const formatDate = (date, format) => {
+    if (typeof date === "string") {
+      return DateTime.fromISO(date, { zone: "UTC" }).toFormat(format);
+    }
+    if (date instanceof Date) {
+      return DateTime.fromJSDate(date, { zone: "UTC" }).toFormat(format);
+    }
+    throw new Error("invalid date, expected string or Date", date);
+  };
 
-  config.addFilter("formatDate", (date, format) => {
-    return DateTime.fromJSDate(date, { zone: "UTC" }).toFormat(format);
+  config.addFilter("htmlDate", date => formatDate(date, "yyyy-LL-dd"));
+
+  config.addFilter("readableDate", date => formatDate(date, "dd LLL yyyy"));
+
+  config.addFilter("formatDate", (date, format) => formatDate(date, format));
+
+  const iconPaths = [
+    "src/assets/icon",
+    "node_modules/@fortawesome/fontawesome-free/svgs/brands",
+    "node_modules/@fortawesome/fontawesome-free/svgs/solid",
+    "node_modules/@fortawesome/fontawesome-free/svgs/regular",
+  ];
+
+  config.addShortcode("icon", id => {
+    for (let dir of iconPaths) {
+      try {
+        const icon = fs.readFileSync(path.resolve(__dirname, dir, `${id}.svg`), { encoding: "utf8" });
+        if (icon) return `<span class="Icon">${icon}</span>`;
+      } catch (e) {
+        if (e.code !== "ENOENT") throw e;
+      }
+    }
+
+    throw new Error(`could not find icon '${id}'`);
   });
 
   // Fake markdown-it library that's actually Pandoc
@@ -74,6 +112,11 @@ module.exports = config => {
     dataTemplateEngine: "njk",
     markdownTemplateEngine: false,
     htmlTemplateEngine: "njk",
-    templateFormats: ["html", "md", "njk", "11ty.js", "txt"],
+    templateFormats: [
+      // Real templates
+      "html", "md", "njk", "11ty.js",
+      // Content
+      "jpg", "png",
+    ],
   };
 };

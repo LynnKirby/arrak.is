@@ -1,51 +1,42 @@
 // SPDX-License-Identifier: 0BSD
 // Written 2019 Lynn Kirby
 //
-// Generate Netlify _headers file to preload the files specified in frontmatter.
+// Generate Netlify _headers file from frontmatter.
+
 
 module.exports = class {
   data() {
     return {
       permalink: "_headers",
-      excludeFromSitemap: true,
+      eleventyExcludeFromCollections: true,
     };
   }
 
   render({ collections }) {
     return collections.all.flatMap(page => {
-      let preload = page.data.preload;
+      let headers = page.data.headers;
 
-      if (preload === null || preload === undefined) return [];
+      if (headers === null || headers === undefined) return [];
 
-      if (typeof preload === "string") {
-        preload = [preload];
+      if (typeof headers !== "object") {
+        throw new Error(`${page.inputPath}: expected "headers" to be an object`);
       }
 
-      if (!Array.isArray(preload)) {
-        throw new Error(`${page.inputPath}: expected "preload" to be a string or array`);
-      }
+      const headerStrings = Object.keys(headers).flatMap(key => {
+        let values = headers[key];
 
-      return preload.flatMap(file => {
-        if (!file.startsWith("/")) {
-          throw new Error(`${page.inputPath}: only absolute URL preload implemented`);
+        if (typeof values === "string") {
+          values = [values];
         }
 
-        let type;
-
-        if (/\.(png|jpe?g|gif|webp|svg)$/.test(file)) {
-          type = "image";
-        } else if (/\.(ttf)$/.test(file)) {
-          type = "font";
-        } else if (/\.(css)$/.test(file)) {
-          type = "style";
+        if (!Array.isArray(values)) {
+          throw new Error(`${page.inputPath}: expected header value to be a string or array`);
         }
 
-        if (!type) {
-          throw new Error(`${page.inputPath}: unknown preload file type "${file}"`);
-        }
-
-        return `${page.url}\n  Link: <${file}>; rel=preload; as=${type}`;
+        return values.map(value => `  ${key}: ${value}\n`);
       });
+
+      return `${page.url}\n${headerStrings}`;
     }).join("\n");
   }
 };
