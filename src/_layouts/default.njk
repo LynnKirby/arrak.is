@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Basic meta -->
+  <title>{{ title }} | arrak.is</title>
+  <link rel="canonical" href="https://arrak.is{{ page.url }}">
+  <meta name="description" content="Lynn Kirby's homepage">
+
+  <!-- OpenGraph meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lynn Kirby">
+  <meta property="og:image" content="https://arrak.is/og-image.jpg">
+  <meta property="og:url" content="https://arrak.is">
+  <meta property="og:description" content="Lynn Kirby's homepage">
+  <meta property="og:site_name" content="arrak.is">
+  <meta property="twitter:site" content="@ALynnkToThePast">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/style/main.css">
+</head>
+
+<body class="layout-center-column flex flex-column f-sans pa2">
+  <header class="flex f-serif f-lh1 cursor-default mt3">
+    <h1 class="ma0 mb1 order-1">{{ title }}</h1>
+    <img src="/assets/image/header-emoji/regular-lynn.svg" class="order-0 mr3 logo-small">
+  </header>
+  <main class="flex-auto">
+    {{ content | safe }}
+  </main>
+  <footer>
+    <div class="flex justify-between f5 mt3 mb2">
+      <div>
+        <a href="/license">anticopyright 2019 Lynn Kirby</a>
+      </div>
+      <div>
+        <a href="https://github.com/LynnKirby/arrak.is/blob/master/{{ page.inputPath }}">edit me on github</a>
+      </div>
+    </div>
+    <iframe src="https://cyberqueer.netlify.com/embed" class="WebringBanner" id="webring-banner"></iframe>
+  </footer>
+  <script src="/assets/script/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,288 @@
+@import url("_regulate.css");
+@import url("_atomic.css");
+@import url("../font/jost.css");
+@import url("../font/hack.css");
+
+/*!
+ * SPDX-License-Identifier: 0BSD
+ */
+
+/*******************************************************************************
+ * Functional utilities
+ */
+
+/* Text and fonts */
+
+.f1, h1 { font-size: 2.25rem; }
+.f2, h2 { font-size: 1.5rem; }
+.f3, h3 { font-size: 1.25rem; }
+.f4, h4 { font-size: 1rem; }
+.f5, h5 { font-size: .875rem; }
+.f6, h6 { font-size: .75rem; }
+
+.f-lh1 { line-height: 1; }
+
+.lining-nums { font-variant-numeric: lining-nums; }
+
+.xtext-shadow {
+  text-shadow: 1px 1px 1px black;
+  color:#fff;
+  text-shadow:-1px -1px 0 #aaa,  1px -1px 0 #aaa, -1px 1px 0 #aaa, 1px 1px 0 #aaa, 1px 1px 1px black;
+}
+
+/* Display */
+
+.block { display: block; }
+
+/* Flexbox */
+
+.flex { display: flex; }
+.flex-column { flex-direction: column; }
+.flex-auto { flex: 1 1 auto; }
+.flex-wrap { flex-wrap: wrap; }
+.order-0 { order: 0; }
+.order-1 { order: 1; }
+.order-2 { order: 2; }
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+.justify-center { justify-content: center; }
+.align-items-baseline { align-items: baseline; }
+
+@media (min-width: 768px) {
+  .md\:flex-nowrap { flex-wrap: none; }
+}
+
+.logo {
+  /* Couldn't figure out how to make the image match the height of the
+  text automatically, so just calculate it by hand ¯\_(ツ)_/¯ */
+  height: calc(2.25rem + 1.5rem + 0.25rem);
+}
+
+.logo-small {
+  height: 2rem;
+}
+
+/* Misc. */
+
+.cursor-default {
+  cursor: default;
+}
+
+/*
+ * Hack used to prevent CSS transitions from running on page load. Attach
+ * .preload to <body> then remove it on window load.
+*/
+.preload * {
+  transition: none !important;
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
+/*******************************************************************************
+ * Variables and page styles
+ */
+
+:root {
+  --text-color: #fffefe;
+  --text-color-secondary: #dfdfdf;
+  --text-color-tertiary: #cacaca;
+  --link-hover-color: hotpink;
+
+  --text-color: #222;
+  --text-color-secondary: #333;
+  --text-color-tertiary: #444;
+  --link-hover-color: hotpink;
+
+  --font-body: "Jost", var(--font-family-system-ui);
+  --font-mono:"Hack", var(--font-family-system-mono);
+  font-size: 18px;
+  --font-mono-size: 0.8rem;
+}
+
+body {
+  background: #eee;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+footer {
+  color: var(--text-color-tertiary);
+}
+
+a {
+  transition: 0.2s ease-in;
+  transition-property: color, text-decoration-color;
+  text-decoration-color: var(--text-color-tertiary);
+}
+
+a:hover,
+a:focus {
+  color: var(--link-hover-color);
+  text-decoration-color: var(--link-hover-color);
+}
+
+/*******************************************************************************
+ * Style utilities
+ */
+
+.border-bottom-rainbow {
+  border: none;
+}
+
+.border-bottom-rainbow::after {
+  display: block;
+  content: "";
+  height: 3px;
+  background-image: linear-gradient(to right,
+    rgba(255, 0, 0, 1),
+    rgba(128, 0, 128, 1),
+    rgba(0, 0, 255, 1),
+    rgba(0, 255, 255, 1),
+    rgba(0, 128, 0, 1),
+    rgba(255, 255, 0, 1),
+    rgba(255, 0, 0, 1));
+  filter: opacity(0.8);
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px black;
+}
+
+.tertiary {
+  color: var(--text-color-tertiary);
+  font-size: 0.9rem;
+}
+
+.layout-center-column {
+  max-width: 45rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*******************************************************************************
+ * Components
+ */
+
+.Icon {
+  display: inline-block;
+  vertical-align: -0.16em
+}
+
+.Icon > svg {
+  height: 1em;
+  width: 1em;
+  overflow: hidden;
+}
+
+.WebringBanner {
+  width: 100%;
+  height: 80px;
+  filter: opacity(0.8);
+  transition: filter 0.2s ease-in;
+}
+
+.WebringBanner:hover,
+.WebringBanner:focus,
+.WebringBanner:active,
+.WebringBanner[data-pseudofocus=true] {
+  filter: opacity(1);
+}
+
+.ElsewhereButton {
+  transition: filter 0.2s ease-in;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.4em 0.5em;
+  margin: 0.2em;
+  display: flex;
+  align-items: baseline;
+  border-radius: 6px;
+  margin-right: 0.5em;
+  justify-content: center;
+  min-width: 7em;
+  filter: brightness(0.9);
+  background: grey;
+  box-shadow: 0px 2px 0px #4c4c4c;
+  line-height: 1;
+  color: white !important;
+}
+
+.ElsewhereButton:hover,
+.ElsewhereButton:focus {
+  filter: brightness(1);
+}
+
+.ElsewhereButton--green {
+  background: #1bce24;
+  box-shadow: 0px 2px 0px #19992f;
+}
+
+.ElsewhereButton--blue {
+  background: #1fa0f1;
+  box-shadow: 0px 2px 0px #1674ae;
+}
+
+.ElsewhereButton--pink {
+  background: hotpink;
+  box-shadow: 0px 2px 0px  rgb(160, 66, 113);
+}
+
+.ElsewhereButton--orange {
+  background: #fc6533;
+  box-shadow: 0px 2px 0px #a24121;
+}
+
+.ElsewhereButton--black {
+  background: #4e4e4e;
+  box-shadow: 0px 2px 0px #757575;
+}
+
+.ElsewhereButton--red {
+  background: rgb(211, 25, 25);
+  box-shadow: 0px 2px 0px rgb(133, 13, 13);
+}
+
+.ElsewhereButton-icon {
+  margin-right: 0.5em;
+}
+
+.Project {
+  display: grid;
+  grid:
+    "preview date" auto
+    "preview title" auto
+    "preview description" 1fr
+    "preview links" auto
+    / 8rem auto;
+  grid-column-gap: 1rem;
+}
+
+.Project-preview {
+  grid-area: preview;
+}
+
+.Project-title {
+  grid-area: title;
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.Project-date {
+  grid-area: date;
+  color: var(--text-color-tertiary);
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.Project-description {
+  grid-area: description;
+  margin-bottom: 0.5rem;
+}
+
+.Project-links {
+  grid-area: links;
+  font-size: 0.9rem;
+  color: var(--text-color-secondary);
+}

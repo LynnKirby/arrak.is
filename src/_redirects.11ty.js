@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: CC0-1.0
+// SPDX-License-Identifier: 0BSD
 // Written 2019 Lynn Kirby
 //
 // Generate Netlify _redirects file based on redirects specified in frontmatter.
@@ -7,7 +7,7 @@ module.exports = class {
   data() {
     return {
       permalink: "_redirects",
-      excludeFromSitemap: true,
+      eleventyExcludeFromCollections: true,
     };
   }
 

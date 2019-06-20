@@ -1,0 +1,30 @@
+---
+permalink: .well-known/webfinger
+excludeFromSitemap: true
+headers:
+  Content-Type: "application/jrd+json; charset=utf-8"
+---
+{
+  "subject": "acct:lynn@arrak.is",
+  "aliases": [
+    "https://arrak.is",
+    "https://twitter.com/ALynnkToThePast",
+    "https://github.com/LynnKirby"
+  ],
+  "links": [
+    {
+      "rel": "http://webfinger.net/rel/profile-page",
+      "href": "{{ social.profile }}",
+      "type": "text/html"
+    },
+    {
+      "rel": "http://webfinger.net/rel/avatar",
+      "href": "{{ social.avatar }}"
+    },
+    {
+      "rel": "canonical_uri",
+      "type": "text/html",
+      "href": "{{ social.profile }}"
+    }
+  ]
+}
