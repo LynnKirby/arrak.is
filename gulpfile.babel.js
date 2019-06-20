@@ -16,6 +16,9 @@ const browserSync = BrowserSync.create();
 import * as rollup from "rollup";
 import babel from "rollup-plugin-babel";
 import { uglify } from "rollup-plugin-uglify";
+import rev from "gulp-rev";
+import revDelete from "gulp-rev-delete-original";
+import revRewrite from "gulp-rev-rewrite";
 
 //******************************************************************************
 // task: favicons
@@ -130,6 +133,21 @@ gulp.task("script:watch", cb => {
 });
 
 //******************************************************************************
+// Task: rev
+
+gulp.task('rev', () => {
+  const assetFilter = filter(['**/*', '!**/*.html'], { restore: true });
+
+  return gulp.src("./public/**/*.{html,css,js}")
+    .pipe(assetFilter)
+    .pipe(rev())
+    .pipe(revDelete())
+    .pipe(assetFilter.restore)
+    .pipe(revRewrite())
+    .pipe(gulp.dest('./public'));
+});
+
+//******************************************************************************
 // Task: clean
 
 gulp.task("clean", () => fs.emptyDir("./public"));
@@ -147,6 +165,7 @@ gulp.task("build", gulp.series(
   "clean",
   "favicons",
   gulp.parallel("style", "11ty", "script"),
+  "rev",
 ));
 
 gulp.task("default", gulp.task("build"));
