@@ -93,7 +93,7 @@
       {% for post in collections.weird | reverse %}
       <div class="mb3">
         <i class="icon-star tertiary"></i>
-        <a href="{{ post.url | url }}" class="ma0 f4 fw400 ml1 mr1">{{ post.data.title }}</a>
+        <a href="{{ post.url }}" class="ma0 f4 fw400 ml1 mr1">{{ post.data.title }}</a>
         <time datetime="{{ post.date | htmlDate }}" class="tertiary">{{ post.date | readableDate }}</time>
       </div>
       {% endfor %}

@@ -13,18 +13,6 @@ module.exports = config => {
   config.addPassthroughCopy("src/assets/image");
   config.addPassthroughCopy("src/assets/font");
 
-  // Override the default `url` filter
-  config.addFilter("url", url => {
-    if (url === "/") return "/";
-    if (url.endsWith("/")) return url.slice(0, -1);
-    if (url.endsWith("/index.html")) {
-      const sliced = url.slice(0, -"/index.html".length);
-      if (sliced === "") return "/";
-      return "/";
-    }
-    return url;
-  });
-
   const formatDate = (date, format) => {
     if (typeof date === "string") {
       return DateTime.fromISO(date, { zone: "UTC" }).toFormat(format);
@@ -116,7 +104,7 @@ module.exports = config => {
       // Real templates
       "html", "md", "njk", "11ty.js",
       // Content
-      "jpg", "png",
+      "jpg", "png", "txt",
     ],
   };
 };
