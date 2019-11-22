@@ -1,0 +1,5 @@
+/.well-known/host-meta
+  Content-Type: "application/xrd+xml; charset=utf-8"
+
+/.well-known/webfinger
+  Content-Type: "application/jrd+json; charset=utf-8"

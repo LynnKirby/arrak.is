@@ -1,10 +1,5 @@
 [build]
-command = "gulp"
 publish = "public"
-
-[dev]
-command = "gulp watch"
-port = 3000
 
 # Redirect from Netlify to my domain
 [[redirects]]
